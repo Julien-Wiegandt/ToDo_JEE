@@ -1,2 +1,4 @@
+com/global/servlets/MyToDo.java
+ com.global.servlets.MyToDo
 com/global/servlets/Index.java
  com.global.servlets.Index

@@ -3,7 +3,14 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
-    
+
+    <jsp-config>
+        <jsp-property-group>
+            <url-pattern>*.jsp</url-pattern>
+            <include-prelude>/WEB-INF/taglibs.jsp</include-prelude>
+        </jsp-property-group>
+    </jsp-config>
+
     <servlet>
         <servlet-name>Index</servlet-name>
         <servlet-class>com.global.servlets.Index</servlet-class>
@@ -12,5 +19,14 @@
         <servlet-name>Index</servlet-name>
         <url-pattern>/</url-pattern>
     </servlet-mapping>
-    
+
+    <servlet>
+        <servlet-name>MyToDo</servlet-name>
+        <servlet-class>com.global.servlets.MyToDo</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MyToDo</servlet-name>
+        <url-pattern>/MyToDo</url-pattern>
+    </servlet-mapping>
+
 </web-app>
