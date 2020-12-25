@@ -1,0 +1,34 @@
+@startuml
+
+/'
+Zero or One	|o--
+Exactly One	||--
+Zero or Many	}o--
+One or Many	}|--
+'/
+
+entity Account{
+    *account_pk : number <<generated>>
+    --
+    email : text <<UC>>
+    password : text
+}
+
+entity Task{
+    *task_pk : number <<generated>>
+    --
+    label : text
+    *list_fk : number <<FK>>
+}
+
+entity List{
+    *list_pk : number <<generated>>
+    --
+    label : text
+    *account_fk : number <<FK>>
+}
+
+List }o--|| Account
+Task }o--|| List
+
+@enduml

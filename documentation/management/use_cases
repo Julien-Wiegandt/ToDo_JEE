@@ -1,0 +1,17 @@
+Login
+    - SignIn
+    - SignUp
+    - Logout
+
+Task
+    - CRUD Task
+
+List
+    - CRUD List of Task
+
+Account management
+    - Update password
+    - Update email
+    - Delete Account
+
+
