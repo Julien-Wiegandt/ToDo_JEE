@@ -1,0 +1,29 @@
+@startuml
+
+package persist{
+    abstract class DAOFactory{
+        createUserDAO(): DAOFactory
+    }
+    package dao{
+        interface UserDAO{
+            + findUserById(id: int): User
+            + findUserByEmail(email: String): User
+            + create(user: User)
+        }
+        package mysql{
+            class MySqlDAOFactory{
+                createUserDAO(): MySqlUserDAO
+            }
+            class MySqlUserDAO{
+
+            }
+        }
+    }
+}
+
+DAOFactory <|-- MySqlDAOFactory
+DAOFactory --> "1" UserDAO
+UserDAO <|.. MySqlUserDAO
+MySqlUserDAO <.. MySqlDAOFactory: creates
+
+@enduml

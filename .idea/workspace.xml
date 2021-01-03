@@ -5,13 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="70791fbf-36a9-4497-8c4e-9c4fbc28a417" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/database/create.sql" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/database/mysql/create.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/database/database.puml" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/database/mysql/database.puml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/database/database_entity_relationship_diagram.png" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/database/mysql/database_entity_relationship_diagram.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,6 +38,7 @@
         <option value="Jsp File" />
         <option value="Class" />
         <option value="Salt Wireframe" />
+        <option value="UML Class" />
       </list>
     </option>
   </component>
@@ -67,16 +65,17 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
-    <property name="DefaultPlantUmlFileTemplate" value="Salt Wireframe" />
+    <property name="DefaultPlantUmlFileTemplate" value="UML Class" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/documentation/database/mysql/database_entity_relationship_diagram.png" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\wiega\Google Drive\Development\IdeaProjects\ToDo_JEE\documentation\database\mysql" />
       <recent name="C:\Users\wiega\Google Drive\Development\IdeaProjects\ToDo_JEE\src\main\webapp\WEB-INF\views" />
       <recent name="C:\Users\wiega\Google Drive\Development\IdeaProjects\ToDo_JEE\src\main\webapp\WEB-INF" />
     </key>
@@ -197,7 +196,7 @@
       <workItem from="1608903492060" duration="9377000" />
       <workItem from="1609002475999" duration="115000" />
       <workItem from="1609710516652" duration="31000" />
-      <workItem from="1609710574958" duration="27000" />
+      <workItem from="1609710574958" duration="4808000" />
     </task>
     <servers />
   </component>

@@ -7,8 +7,8 @@ Zero or Many	}o--
 One or Many	}|--
 '/
 
-entity Account{
-    *account_pk : number <<generated>>
+entity User{
+    *user_pk : number <<generated>>
     --
     email : text <<UC>>
     password : text
@@ -25,10 +25,10 @@ entity List{
     *list_pk : number <<generated>>
     --
     label : text
-    *account_fk : number <<FK>>
+    *user_fk : number <<FK>>
 }
 
-List }o--|| Account
+List }o--|| User
 Task }o--|| List
 
 @enduml
