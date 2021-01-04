@@ -1,0 +1,95 @@
+@startuml
+
+package persist{
+    package dao{
+        abstract class DAOFactory{
+            + connection: Connection
+            + createTaskDAO(): DAOFactory
+            + createListDAO(): DAOFactory
+        }
+        interface TaskDAO{
+            + getAllTaskByListId(listId: String): Collection<Task>
+            + create(task: Task)
+            + update(task: Task)
+            + delete(id: String)
+        }
+        interface ListDAO{
+            + getAllListByUserId(userid: String): Collection<List>
+            + create(list: List)
+            + update(list: List)
+            + delete(id: String)
+        }
+        package mysql{
+            class MySqlDAOFactory{
+                + createTaskDAO(): MySqlTaskDAO
+                + createListDAO(): MySqlListDAO
+            }
+            class MySqlTaskDAO{}
+            class MySqlListDAO{}
+        }
+        package postgresql{
+            class PostgreSqlDAOFactory{
+                + createTaskDAO(): PostgreSqlTaskDAO
+                + createListDAO(): PostgreSqlListDAO
+            }
+            class PostgreSqlTaskDAO{}
+            class PostgreSqlListDAO{}
+        }
+    }
+}
+
+package core{
+    package facade{
+        class TaskFacade{
+            + getAllTaskByListId(listId: String): Collection<Task>
+            + create(label: String, list_fk: String)
+            + delete(id: String)
+        }
+        class ListFacade{
+            + getAllListByUserId(userId: String): Collection<List>
+            + create(label: String, user_fk: String)
+            + delete(id: String)
+        }
+    }
+    package model{
+        class Task{
+            - id: String
+            - label: String
+            - list_fk: String
+        }
+        class List{
+            - id: String
+            - label: String
+            - user_fk: String
+        }
+    }
+}
+
+DAOFactory <|-- MySqlDAOFactory
+DAOFactory <|-- PostgreSqlDAOFactory
+
+DAOFactory --> "1" TaskDAO
+DAOFactory --> "1" ListDAO
+
+TaskDAO <|.. MySqlTaskDAO
+ListDAO <|.. MySqlListDAO
+
+MySqlTaskDAO <.. MySqlDAOFactory: creates
+MySqlListDAO <.. MySqlDAOFactory: creates
+
+PostgreSqlTaskDAO <.. PostgreSqlDAOFactory: creates
+PostgreSqlListDAO <.. PostgreSqlDAOFactory: creates
+
+TaskDAO <|.. PostgreSqlTaskDAO
+ListDAO <|.. PostgreSqlListDAO
+
+TaskFacade ..> Task: uses
+ListFacade ..> List: uses
+
+TaskFacade --> "1" DAOFactory
+ListFacade --> "1" DAOFactory
+
+TaskFacade --> "1" TaskDAO
+ListFacade --> "1" ListDAO
+
+@enduml

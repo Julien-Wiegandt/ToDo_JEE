@@ -1,10 +1,11 @@
 @startuml
 
 package persist{
-    abstract class DAOFactory{
-        createUserDAO(): DAOFactory
-    }
     package dao{
+        abstract class DAOFactory{
+            + connection: Connection
+            + createUserDAO(): DAOFactory
+        }
         interface UserDAO{
             + findUserById(id: int): User
             + findUserByEmail(email: String): User
@@ -12,18 +13,53 @@ package persist{
         }
         package mysql{
             class MySqlDAOFactory{
-                createUserDAO(): MySqlUserDAO
+                + createUserDAO(): MySqlUserDAO
             }
             class MySqlUserDAO{
+
+            }
+        }
+        package postgresql{
+            class PostgreSqlDAOFactory{
+                + createUserDAO(): PostgreSqlUserDAO
+            }
+            class PostgreSqlUserDAO{
 
             }
         }
     }
 }
 
+package core{
+    package facade{
+        class UserFacade{
+            + findUserById(id: String): User
+            + findUserByEmail(email: String): User
+            + create(email: String, password: String)
+        }
+    }
+    package model{
+        class User{
+            - id: String
+            - email: String
+            - password: String
+        }
+    }
+}
+
 DAOFactory <|-- MySqlDAOFactory
+DAOFactory <|-- PostgreSqlDAOFactory
+
 DAOFactory --> "1" UserDAO
 UserDAO <|.. MySqlUserDAO
+
 MySqlUserDAO <.. MySqlDAOFactory: creates
+UserDAO <|.. PostgreSqlUserDAO
+
+PostgreSqlUserDAO <.. PostgreSqlDAOFactory: creates
+
+UserFacade ..> User: uses
+UserFacade --> "1" DAOFactory
+UserFacade --> "1" UserDAO
 
 @enduml
