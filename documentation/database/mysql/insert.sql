@@ -1,8 +1,8 @@
 INSERT INTO User (email)
-VALUES ('user1@test.com'),
-       ('user2@test.com');
+VALUES ('user1@test.com', 'psd'),
+       ('user2@test.com', 'psd');
 
-INSERT INTO List (label, user_fk)
+INSERT INTO TaskList (label, user_fk)
 VALUES ('List1', 1),
        ('List1', 2),
        ('List2', 2);

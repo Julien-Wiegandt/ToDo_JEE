@@ -5,16 +5,16 @@ package persist{
         abstract class DAOFactory{
             + connection: Connection
             + createTaskDAO(): DAOFactory
-            + createListDAO(): DAOFactory
+            + createTaskListServlet ..> TaskFacade: usesDAO(): DAOFactory
         }
         interface TaskDAO{
-            + getAllTaskByListId(listId: String): Collection<Task>
+            + getAllTaskByTaskListServlet ..> TaskFacade: usesId(taskListId: String): Collection<Task>
             + create(task: Task)
             + update(task: Task)
             + delete(id: String)
         }
-        interface ListDAO{
-            + getAllListByUserId(userid: String): Collection<List>
+        interface TaskListDAO{
+            + getAllTaskListByUserId(userid: String): Collection<List>
             + create(list: List)
             + update(list: List)
             + delete(id: String)
@@ -22,18 +22,18 @@ package persist{
         package mysql{
             class MySqlDAOFactory{
                 + createTaskDAO(): MySqlTaskDAO
-                + createListDAO(): MySqlListDAO
+                + createTaskListDAO(): MySqlTaskListDAO
             }
             class MySqlTaskDAO{}
-            class MySqlListDAO{}
+            class MySqlTaskListDAO{}
         }
         package postgresql{
             class PostgreSqlDAOFactory{
                 + createTaskDAO(): PostgreSqlTaskDAO
-                + createListDAO(): PostgreSqlListDAO
+                + createTaskListDAO(): PostgreSqlTaskListDAO
             }
             class PostgreSqlTaskDAO{}
-            class PostgreSqlListDAO{}
+            class PostgreSqlTaskListDAO{}
         }
     }
 }
@@ -41,23 +41,23 @@ package persist{
 package core{
     package facade{
         class TaskFacade{
-            + getAllTaskByListId(listId: String): Collection<Task>
-            + create(label: String, list_fk: String)
+            + getAllTaskByTaskListId(taskListId: String): Collection<Task>
+            + create(label: String, taskList_fk: String)
             + delete(id: String)
         }
-        class ListFacade{
-            + getAllListByUserId(userId: String): Collection<List>
+        class TaskListFacade{
+            + getAllTaskListByUserId(userId: String): Collection<List>
             + create(label: String, user_fk: String)
             + delete(id: String)
         }
     }
-    package model{
+    package bean{
         class Task{
             - id: String
             - label: String
-            - list_fk: String
+            - tasklist_fk: String
         }
-        class List{
+        class TaskList{
             - id: String
             - label: String
             - user_fk: String
@@ -65,31 +65,43 @@ package core{
     }
 }
 
+package servlet{
+    class TaskListServlet{
+        - getAllTaskByListId(id: String)
+    }
+    class TaskListsServlet{
+        - getAllListByUserId(id: String)
+    }
+}
+
 DAOFactory <|-- MySqlDAOFactory
 DAOFactory <|-- PostgreSqlDAOFactory
 
 DAOFactory --> "1" TaskDAO
-DAOFactory --> "1" ListDAO
+DAOFactory --> "1" TaskListDAO
 
 TaskDAO <|.. MySqlTaskDAO
-ListDAO <|.. MySqlListDAO
+TaskListDAO <|.. MySqlTaskListDAO
 
 MySqlTaskDAO <.. MySqlDAOFactory: creates
-MySqlListDAO <.. MySqlDAOFactory: creates
+MySqlTaskListDAO <.. MySqlDAOFactory: creates
 
 PostgreSqlTaskDAO <.. PostgreSqlDAOFactory: creates
-PostgreSqlListDAO <.. PostgreSqlDAOFactory: creates
+PostgreSqlTaskListDAO <.. PostgreSqlDAOFactory: creates
 
 TaskDAO <|.. PostgreSqlTaskDAO
-ListDAO <|.. PostgreSqlListDAO
+TaskListDAO <|.. PostgreSqlTaskListDAO
 
 TaskFacade ..> Task: uses
-ListFacade ..> List: uses
+TaskListFacade ..> TaskList: uses
 
 TaskFacade --> "1" DAOFactory
-ListFacade --> "1" DAOFactory
+TaskListFacade --> "1" DAOFactory
 
 TaskFacade --> "1" TaskDAO
-ListFacade --> "1" ListDAO
+TaskListFacade --> "1" TaskListDAO
+
+TaskListServlet ..> TaskFacade: uses
+TaskListsServlet ..> TaskListFacade: uses
 
 @enduml

@@ -21,14 +21,14 @@ entity Task{
     *list_fk : number <<FK>>
 }
 
-entity List{
-    *list_pk : number <<generated>>
+entity TaskList{
+    *tasklist_pk : number <<generated>>
     --
     label : text
     *user_fk : number <<FK>>
 }
 
-List }o--|| User
-Task }o--|| List
+TaskList }o--|| User
+Task }o--|| TaskList
 
 @enduml

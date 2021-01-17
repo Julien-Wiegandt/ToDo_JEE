@@ -38,12 +38,21 @@ package core{
             + create(email: String, password: String)
         }
     }
-    package model{
+    package bean{
         class User{
             - id: String
             - email: String
             - password: String
         }
+    }
+}
+
+package servlet{
+    class LoginServlet{
+        + login(email: String, password: String)
+    }
+    class RegisterServlet{
+        + register(email: String, password: String)
     }
 }
 
@@ -61,5 +70,8 @@ PostgreSqlUserDAO <.. PostgreSqlDAOFactory: creates
 UserFacade ..> User: uses
 UserFacade --> "1" DAOFactory
 UserFacade --> "1" UserDAO
+
+LoginServlet ..> UserFacade: uses
+RegisterServlet ..> UserFacade: uses
 
 @enduml

@@ -5,8 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="70791fbf-36a9-4497-8c4e-9c4fbc28a417" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/ToDo_JEE.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ToDo_JEE.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/database/mysql/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/database/mysql/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/database/mysql/create.sql" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/database/mysql/create.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/database/mysql/database.puml" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/database/mysql/database.puml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/database/mysql/database_entity_relationship_diagram.png" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/database/mysql/database_entity_relationship_diagram.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/database/mysql/insert.sql" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/database/mysql/insert.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/documentation/software_design/login/login_class_diagram.puml" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/software_design/login/login_class_diagram.puml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -80,17 +88,6 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Tomcat 9.0.41" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.41" ALTERNATIVE_JRE_ENABLED="false">
       <option name="UPDATING_POLICY" value="hot-swap-classes" />
       <deployment>
@@ -195,6 +192,7 @@
       <workItem from="1609710516652" duration="31000" />
       <workItem from="1609710574958" duration="5022000" />
       <workItem from="1609762343876" duration="5028000" />
+      <workItem from="1610920440332" duration="2705000" />
     </task>
     <servers />
   </component>
