@@ -1,15 +1,15 @@
-INSERT INTO User (email)
-VALUES ('user1@test.com', 'psd'),
-       ('user2@test.com', 'psd');
+INSERT INTO User (user_pk, email, password)
+VALUES (null, 'user1@test.com', 'psd'),
+       (null, 'user2@test.com', 'psd');
 
-INSERT INTO TaskList (label, user_fk)
-VALUES ('List1', 1),
-       ('List1', 2),
-       ('List2', 2);
+INSERT INTO TaskList (tasklist_pk, label, user_fk)
+VALUES (null, 'List1', 1),
+       (null, 'List1', 2),
+       (null, 'List2', 2);
 
-INSERT INTO Task (label, list_fk)
-VALUES ('Task1', 1),
-       ('Task2', 1),
-       ('Task1', 2),
-       ('Task1', 3),
-       ('Task2', 3);
+INSERT INTO Task (task_pk, label, tasklist_fk)
+VALUES (null, 'Task1', 1),
+       (null, 'Task2', 1),
+       (null, 'Task1', 2),
+       (null, 'Task1', 3),
+       (null, 'Task2', 3);
