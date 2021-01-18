@@ -1,4 +1,4 @@
-package com.global.servlets;
+package com.global.servlet;
 
 import java.io.*;
 import javax.servlet.ServletException;

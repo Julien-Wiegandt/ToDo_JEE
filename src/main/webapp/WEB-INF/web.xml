@@ -13,7 +13,7 @@
 
     <servlet>
         <servlet-name>Index</servlet-name>
-        <servlet-class>com.global.servlets.Index</servlet-class>
+        <servlet-class>com.global.servlet.Index</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>Index</servlet-name>
@@ -22,7 +22,7 @@
 
     <servlet>
         <servlet-name>MyToDo</servlet-name>
-        <servlet-class>com.global.servlets.MyToDo</servlet-class>
+        <servlet-class>com.global.servlet.MyToDo</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>MyToDo</servlet-name>
