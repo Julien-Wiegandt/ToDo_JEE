@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>ToDo</title>
-    </head>
-
+    <%@include file="head.jsp"%>
     <body>
         <%@include file="menu.jsp"%>
         <p>Bonjour</p>
