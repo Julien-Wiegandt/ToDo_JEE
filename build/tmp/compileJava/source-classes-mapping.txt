@@ -1,4 +1,22 @@
-com/global/servlets/MyToDo.java
- com.global.servlets.MyToDo
-com/global/servlets/Index.java
- com.global.servlets.Index
+com/global/servlet/RegisterServlet.java
+ com.global.servlet.RegisterServlet
+com/global/persist/dao/postgresql/UserDAOPostgreSQLImpl.java
+ com.global.persist.dao.postgresql.UserDAOPostgreSQLImpl
+com/global/core/facade/UserFacade.java
+ com.global.core.facade.UserFacade
+com/global/core/bean/User.java
+ com.global.core.bean.User
+com/global/persist/dao/DAOFactory.java
+ com.global.persist.dao.DAOFactory
+com/global/persist/dao/UserDAO.java
+ com.global.persist.dao.UserDAO
+com/global/persist/dao/mysql/MySQLDAOFactory.java
+ com.global.persist.dao.mysql.MySQLDAOFactory
+com/global/persist/dao/mysql/UserDAOMySQLImpl.java
+ com.global.persist.dao.mysql.UserDAOMySQLImpl
+com/global/persist/dao/postgresql/PostgreSQLDAOFactory.java
+ com.global.persist.dao.postgresql.PostgreSQLDAOFactory
+com/global/servlet/LoginServlet.java
+ com.global.servlet.LoginServlet
+com/global/servlet/IndexServlet.java
+ com.global.servlet.IndexServlet

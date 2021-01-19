@@ -1,10 +1,9 @@
-<!DOCTYPE html>
 <html>
+<head>
     <%@include file="head.jsp"%>
-    <body>
-        <%@include file="menu.jsp"%>
-        <p>Bonjour</p>
-        <c:set var="pseudo" value="Ju" scope="page"/>
-        <p><c:out value="${ pseudo }" /></p>
-    </body>
+</head>
+<body>
+    <%@include file="menu.jsp"%>
+
+</body>
 </html>
