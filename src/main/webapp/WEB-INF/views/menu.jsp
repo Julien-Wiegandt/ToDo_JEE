@@ -1,39 +1,37 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: wiega
-  Date: 24/12/2020
-  Time: 22:55
-  To change this template use File | Settings | File Templates.
---%>
-
 <header>
-    <nav class="relative flex flex-wrap items-center justify-between px-2 py-3 navbar-expand-lg bg-blue-500 mb-3">
-        <div class="container px-4 mx-auto flex flex-wrap items-center justify-between">
-            <div class="w-full relative flex justify-between lg:w-auto  px-4 lg:static lg:block lg:justify-start">
-                <a class="text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-no-wrap uppercase text-white" href="/">
-                    ToDO-JEE
-                </a>
-                <button class="cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none" type="button" id="menu-button">
-                    <span class="block relative w-6 h-px rounded-sm bg-white"></span>
-                    <span class="block relative w-6 h-px rounded-sm bg-white mt-1"></span>
-                    <span class="block relative w-6 h-px rounded-sm bg-white mt-1"></span>
-                </button>
-            </div>
-            <div class="hidden lg:flex flex-grow items-center" id="menu">
-                <ul class="flex flex-col lg:flex-row list-none ml-auto">
-                    <li class="nav-item">
-                        <a class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75" href="/login">
-                            Login
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75" href="/register">
-                            Register
-                        </a>
-                    </li>
-                </ul>
-            </div>
+    <nav class="navbar navbar-inverse">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="/" class="navbar-brand">ToDo-JEE</a>
+        </div>
+        <!-- Collection of nav links, forms, and other content for toggling -->
+        <div id="navbarCollapse" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <!--
+                <li class="active"><a href="/">Home</a></li>
+                <li><a href="#">Profile</a></li>
+                <li class="dropdown">
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">Messages <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Inbox</a></li>
+                        <li><a href="#">Drafts</a></li>
+                        <li><a href="#">Sent Items</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">Trash</a></li>
+                    </ul>
+                </li>
+                -->
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="active"><a href="/login">Login</a></li>
+                <li><a href="/register">Register</a></li>
+            </ul>
         </div>
     </nav>
 </header>
-

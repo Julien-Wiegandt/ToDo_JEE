@@ -1,5 +1,3 @@
-com/global/servlet/RegisterServlet.java
- com.global.servlet.RegisterServlet
 com/global/persist/dao/postgresql/UserDAOPostgreSQLImpl.java
  com.global.persist.dao.postgresql.UserDAOPostgreSQLImpl
 com/global/core/facade/UserFacade.java
@@ -16,7 +14,9 @@ com/global/persist/dao/mysql/UserDAOMySQLImpl.java
  com.global.persist.dao.mysql.UserDAOMySQLImpl
 com/global/persist/dao/postgresql/PostgreSQLDAOFactory.java
  com.global.persist.dao.postgresql.PostgreSQLDAOFactory
-com/global/servlet/LoginServlet.java
- com.global.servlet.LoginServlet
 com/global/servlet/IndexServlet.java
  com.global.servlet.IndexServlet
+com/global/servlet/RegisterServlet.java
+ com.global.servlet.RegisterServlet
+com/global/servlet/LoginServlet.java
+ com.global.servlet.LoginServlet

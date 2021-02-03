@@ -11,20 +11,27 @@
 </head>
 <body>
     <%@include file="menu.jsp"%>
-    <div class="container flex justify-center  mt-40 mx-auto ">
-        <form class="bg-blue-300 p-4 shadow-2xl">
-            <div class="p-3">
-                <input class="bg-gray-200 focus:bg-white outline-none py-2 px-4 block w-full" type="email" placeholder="Username">
-            </div>
-            <div class="p-3">
-                <input type="text" placeholder="Password" class="bg-gray-200 focus:bg-white outline-none py-2 px-4 block w-full">
-            </div>
-            <div class="p-3">
-                <button class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
-                    Login
-                </button>
-            </div>
-        </form>
-    </div>
+    <section class="container">
+        <section class="row justify-content-center">
+            <section class="mx-auto">
+                <form class="form-container">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Email address</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Password</label>
+                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Login</button>
+                </form>
+            </section>
+        </section>
+    </section>
 </body>
 </html>
