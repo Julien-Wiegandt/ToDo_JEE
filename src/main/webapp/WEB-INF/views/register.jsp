@@ -1,12 +1,9 @@
-<html>
-<head>
-    <%@include file="head.jsp"%>
-</head>
+<%@include file="head.jsp"%>
 <body>
     <%@include file="menu.jsp"%>
-    <section class="container-fluid">
+    <section class="container">
         <section class="row justify-content-center">
-            <section class="col-12 col-sm-6 col-md-3">
+            <section class="col-12 col-sm-6 col-md-4">
                 <form class="form-container">
                     <div class="form-group">
                         <label for="InputEmail1">Email address</label>

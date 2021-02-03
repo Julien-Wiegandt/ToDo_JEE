@@ -1,8 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <%@include file="head.jsp"%>
-</head>
+<%@include file="head.jsp"%>
 <body>
 <%@include file="menu.jsp"%>
 </body>
