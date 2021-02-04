@@ -20,3 +20,5 @@ com/global/servlet/RegisterServlet.java
  com.global.servlet.RegisterServlet
 com/global/servlet/LoginServlet.java
  com.global.servlet.LoginServlet
+com/global/persist/dao/mysql/MySQLConnection.java
+ com.global.persist.dao.mysql.MySQLConnection

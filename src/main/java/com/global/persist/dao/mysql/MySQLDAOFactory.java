@@ -5,7 +5,7 @@ import com.global.persist.dao.UserDAO;
 
 public class MySQLDAOFactory extends DAOFactory {
     public MySQLDAOFactory(){
-        //Faire la connection
+        new MySQLConnection();
     }
 
     public UserDAO createUserDAO(){

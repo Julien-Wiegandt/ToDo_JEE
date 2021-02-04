@@ -1,0 +1,1 @@
+psql --host=database --username=admin --dbname=todo_postgres_db
