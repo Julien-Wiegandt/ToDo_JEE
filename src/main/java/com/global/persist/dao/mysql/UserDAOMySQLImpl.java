@@ -10,51 +10,63 @@ import java.sql.SQLException;
 public class UserDAOMySQLImpl implements UserDAO {
 
     @Override
-    public User findUserById(String id) {
+    public User findUserById(String id) throws SQLException {
         User user = null;
+        PreparedStatement statement = null;
+        ResultSet rs = null;
         try {
-            PreparedStatement statement = MySQLConnection.connection.prepareStatement("SELECT * FROM User WHERE user_pk = ?;");
+            statement = MySQLConnection.connection.prepareStatement("SELECT * FROM User WHERE user_pk = ?;");
             statement.setString(1, id);
-            ResultSet rs = statement.executeQuery();
-            statement.close();
-            String email = rs.getString("email");
-            String password = rs.getString("password");
-            rs.close();
-            user = new User(id, email, password);
+            rs = statement.executeQuery();
+            while(rs.next()) {
+                String email = rs.getString("email");
+                String password = rs.getString("password");
+                user = new User(id, email, password);
+            }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
+        } finally {
+            statement.close();
+            rs.close();
         }
         return user;
     }
 
     @Override
-    public User findUserByEmail(String email) {
+    public User findUserByEmail(String email) throws SQLException {
         User user = null;
+        PreparedStatement statement = null;
+        ResultSet rs = null;
         try {
-            PreparedStatement statement = MySQLConnection.connection.prepareStatement("SELECT * FROM User WHERE email = ?;");
+            statement = MySQLConnection.connection.prepareStatement("SELECT * FROM User WHERE email = ?;");
             statement.setString(1, email);
-            ResultSet rs = statement.executeQuery();
-            statement.close();
-            String id = rs.getString("user_pk");
-            String password = rs.getString("password");
-            rs.close();
-            user = new User(id, email, password);
+            rs = statement.executeQuery();
+            while(rs.next()) {
+                String id = rs.getString("user_pk");
+                String password = rs.getString("password");
+                user = new User(id, email, password);
+            }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
+        } finally {
+            statement.close();
+            rs.close();
         }
         return user;
     }
 
     @Override
-    public void createUser(User user) {
+    public void createUser(User user) throws SQLException {
+        PreparedStatement statement = null;
         try {
-            PreparedStatement statement = MySQLConnection.connection.prepareStatement("INSERT INTO User (user_pk, email, password) VALUES (null, ?, ?);");
+            statement = MySQLConnection.connection.prepareStatement("INSERT INTO User (user_pk, email, password) VALUES (null, ?, ?);");
             statement.setString(1, user.getEmail());
             statement.setString(2, user.getPassword());
             statement.executeUpdate();
-            statement.close();
         } catch (SQLException throwables) {
             throwables.printStackTrace();
+        } finally {
+            statement.close();
         }
     }
 }

@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.sql.SQLException;
 
 public class RegisterServlet extends HttpServlet {
 
@@ -15,19 +16,27 @@ public class RegisterServlet extends HttpServlet {
     }
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-        System.out.println("get register view");
         this.getServletContext().getRequestDispatcher("/WEB-INF/views/register.jsp").forward(request, response);
     }
 
+    /**
+     * 
+     * @param request
+     * @param response
+     * @throws IOException
+     * @throws ServletException
+     * @// TODO: 06/02/2021 handle exception 
+     */
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException{
         String email = request.getParameter("inputEmail");
         String password1 = request.getParameter("inputPassword1");
         String password2 = request.getParameter("inputPassword2");
-        System.out.println(email);
-        System.out.println(password1);
-        System.out.println(password2);
         if(password1.equals(password2)){
-            UserFacade.getUserFacade().createUser(email, password1);
+            try {
+                UserFacade.getUserFacade().createUser(email, password1);
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
             System.out.println("Register lunched");
         }
         else{

@@ -8,6 +8,7 @@ import com.global.persist.dao.postgresql.PostgreSQLDAOFactory;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.Properties;
 
 public class UserFacade {
@@ -40,13 +41,13 @@ public class UserFacade {
         return instance;
     }
 
-    public User findUserbyId(String id){ return this.userDAO.findUserById(id); }
+    public User findUserbyId(String id) throws SQLException { return this.userDAO.findUserById(id); }
 
-    public User findUserByEmail(String email){
+    public User findUserByEmail(String email) throws SQLException {
         return this.userDAO.findUserByEmail(email);
     }
 
-    public void createUser(String email, String password){
+    public void createUser(String email, String password) throws SQLException {
         this.userDAO.createUser(new User(null, email, password));
     }
 }

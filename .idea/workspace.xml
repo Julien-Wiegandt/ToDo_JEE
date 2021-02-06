@@ -5,7 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="70791fbf-36a9-4497-8c4e-9c4fbc28a417" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/global/core/facade/UserFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/global/core/facade/UserFacade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/global/persist/dao/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/global/persist/dao/UserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/global/persist/dao/mysql/UserDAOMySQLImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/global/persist/dao/mysql/UserDAOMySQLImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/global/servlet/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/global/servlet/LoginServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/global/servlet/RegisterServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/global/servlet/RegisterServlet.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
