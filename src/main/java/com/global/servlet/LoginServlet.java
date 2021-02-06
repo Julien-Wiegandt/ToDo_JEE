@@ -18,7 +18,6 @@ public class LoginServlet extends HttpServlet {
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String email = request.getParameter("inputEmail");
         request.setAttribute("email", email);
-        System.out.println(email);
         this.getServletContext().getRequestDispatcher("/WEB-INF/views/login.jsp").forward(request, response);
     }
 
