@@ -14,8 +14,9 @@ public class UserFacade {
 
     private DAOFactory daoFactory;
     private UserDAO userDAO;
+    private static UserFacade instance;
 
-    public UserFacade(){
+    private UserFacade(){
         try {
             Properties prop=new Properties();
             FileInputStream ip= new FileInputStream("C:\\Users\\wiega\\Google Drive\\Development\\IdeaProjects\\ToDo_JEE\\config.properties");
@@ -29,6 +30,14 @@ public class UserFacade {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public static UserFacade getUserFacade() {
+        if (instance == null) {
+            instance = new UserFacade();
+        }
+
+        return instance;
     }
 
     public User findUserbyId(String id){ return this.userDAO.findUserById(id); }

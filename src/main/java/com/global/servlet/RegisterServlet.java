@@ -15,6 +15,7 @@ public class RegisterServlet extends HttpServlet {
     }
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+        System.out.println("get register view");
         this.getServletContext().getRequestDispatcher("/WEB-INF/views/register.jsp").forward(request, response);
     }
 
@@ -22,12 +23,17 @@ public class RegisterServlet extends HttpServlet {
         String email = request.getParameter("inputEmail");
         String password1 = request.getParameter("inputPassword1");
         String password2 = request.getParameter("inputPassword2");
-
+        System.out.println(email);
+        System.out.println(password1);
+        System.out.println(password2);
         if(password1.equals(password2)){
-            UserFacade.get
+            UserFacade.getUserFacade().createUser(email, password1);
+            System.out.println("Register lunched");
         }
-
-        this.getServletContext().getRequestDispatcher("/WEB-INF/views/index.jsp").forward(request, response);
+        else{
+            System.out.println("Register issue");
+        }
+        this.getServletContext().getRequestDispatcher("/WEB-INF/views/login.jsp").forward(request, response);
     }
 
     public void destroy() {
