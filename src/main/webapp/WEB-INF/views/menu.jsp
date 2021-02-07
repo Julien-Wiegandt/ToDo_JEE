@@ -12,26 +12,22 @@
         </div>
         <!-- Collection of nav links, forms, and other content for toggling -->
         <div id="navbarCollapse" class="collapse navbar-collapse">
-            <ul class="nav navbar-nav">
-                <!--
-                <li class="active"><a href="/">Home</a></li>
-                <li><a href="#">Profile</a></li>
-                <li class="dropdown">
-                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">Messages <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Inbox</a></li>
-                        <li><a href="#">Drafts</a></li>
-                        <li><a href="#">Sent Items</a></li>
-                        <li class="divider"></li>
-                        <li><a href="#">Trash</a></li>
+            <c:choose>
+                <c:when test="${!empty sessionScope.userSession}">
+                    <ul class="nav navbar-nav">
+                        <li><a href="/profile">Profile</a></li>
                     </ul>
-                </li>
-                -->
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li class="active"><a href="/login">Login</a></li>
-                <li><a href="/register">Register</a></li>
-            </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="/disconnect">Disconnect</a></li>
+                    </ul>
+                </c:when>
+                <c:otherwise>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="/login">Login</a></li>
+                        <li><a href="/register">Register</a></li>
+                    </ul>
+                </c:otherwise>
+            </c:choose>
         </div>
     </nav>
 </header>

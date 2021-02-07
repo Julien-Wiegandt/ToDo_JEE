@@ -12,30 +12,39 @@
     </jsp-config>
 
     <servlet>
-        <servlet-name>IndexServlet</servlet-name>
-        <servlet-class>com.global.servlet.IndexServlet</servlet-class>
+        <servlet-name>Index</servlet-name>
+        <servlet-class>com.global.servlet.Index</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>IndexServlet</servlet-name>
+        <servlet-name>Index</servlet-name>
         <url-pattern>/</url-pattern>
     </servlet-mapping>
 
     <servlet>
-        <servlet-name>LoginServlet</servlet-name>
-        <servlet-class>com.global.servlet.LoginServlet</servlet-class>
+        <servlet-name>Login</servlet-name>
+        <servlet-class>com.global.servlet.Login</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>LoginServlet</servlet-name>
+        <servlet-name>Login</servlet-name>
         <url-pattern>/login</url-pattern>
     </servlet-mapping>
 
     <servlet>
-        <servlet-name>RegisterServlet</servlet-name>
-        <servlet-class>com.global.servlet.RegisterServlet</servlet-class>
+        <servlet-name>Register</servlet-name>
+        <servlet-class>com.global.servlet.Register</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>RegisterServlet</servlet-name>
+        <servlet-name>Register</servlet-name>
         <url-pattern>/register</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Disconnect</servlet-name>
+        <servlet-class>com.global.servlet.Disconnect</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Disconnect</servlet-name>
+        <url-pattern>/disconnect</url-pattern>
     </servlet-mapping>
 
 </web-app>

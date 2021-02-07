@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.SQLException;
 
-public class RegisterServlet extends HttpServlet {
+public class Register extends HttpServlet {
 
     public void init() {
     }

@@ -4,7 +4,7 @@ import java.io.*;
 import javax.servlet.ServletException;
 import javax.servlet.http.*;
 
-public class IndexServlet extends HttpServlet {
+public class Index extends HttpServlet {
 
     public void init() {
     }
