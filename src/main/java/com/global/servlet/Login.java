@@ -30,7 +30,6 @@ public class Login extends HttpServlet {
      * @param response
      * @throws ServletException
      * @throws IOException
-     * @// TODO: 06/02/2021 handle exception 
      */
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         LoginForm form = new LoginForm();

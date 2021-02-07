@@ -31,7 +31,6 @@ public class Register extends HttpServlet {
      * @param response
      * @throws IOException
      * @throws ServletException
-     * @// TODO: 06/02/2021 handle exception 
      */
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException{
         RegisterForm form = new RegisterForm();
