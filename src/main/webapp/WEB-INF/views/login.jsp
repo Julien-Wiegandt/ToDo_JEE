@@ -20,10 +20,12 @@
                                 <input type="password" class="form-control" name="password" id="password" placeholder="Password">
                                 <span class="error">${form.errors['password']}</span>
                             </div>
+                            <!--
                             <div class="form-check">
                                 <input type="checkbox" name="remember" class="form-check-input" id="remember">
                                 <label class="form-check-label" for="remember">Remember me</label>
                             </div>
+                            -->
                             <button type="submit" class="btn btn-primary">Login</button>
                         </form>
                     </c:otherwise>

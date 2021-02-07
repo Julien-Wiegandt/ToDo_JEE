@@ -6,17 +6,16 @@
             <section class="col-12 col-sm-6 col-md-4">
                 <form method="post" >
                     <div class="form-group">
-                        <label for="inputEmail">Email address</label>
-                        <input type="email" class="form-control" name="inputEmail" id="inputEmail" aria-describedby="emailHelp" placeholder="Enter email">
-                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                        <label for="email">Email address</label>
+                        <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp" placeholder="Enter email">
                     </div>
                     <div class="form-group">
-                        <label for="inputPassword1">Password</label>
-                        <input type="password" class="form-control" name="inputPassword1" id="inputPassword1" placeholder="Password">
+                        <label for="password1">Password</label>
+                        <input type="password" class="form-control" name="password1" id="password1" placeholder="Password">
                     </div>
                     <div class="form-group">
-                        <label for="inputPassword2">Reapeat password</label>
-                        <input type="password" class="form-control" name="inputPassword2" id="inputPassword2" placeholder="Repeat password">
+                        <label for="password2">Reapeat password</label>
+                        <input type="password" class="form-control" name="password2" id="password2" placeholder="Repeat password">
                     </div>
                     <button type="submit" class="btn btn-primary">Register</button>
                 </form>
