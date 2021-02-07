@@ -13,11 +13,11 @@ public class MySQLConnection {
 
     private String MYSQL_DB_HOST,MYSQL_DB_NAME,MYSQL_DB_PORT,MYSQL_DB_USERNAME,MYSQL_DB_PW;
 
-    public MySQLConnection(){
+    public MySQLConnection() throws Exception {
         getConnection();
     }
 
-    public Connection getConnection() {
+    public Connection getConnection() throws Exception {
         if(connection==null){
             try {
                 Class.forName("com.mysql.jdbc.Driver");
@@ -56,13 +56,7 @@ public class MySQLConnection {
                 connection = DriverManager.
                         getConnection(connectionURL.toString(), MYSQL_DB_USERNAME, MYSQL_DB_PW);
             } catch (SQLException e) {
-                System.out.println("Connection to database failed:\n" + e.getMessage());
-            }
-
-            if (connection != null) {
-                System.out.println("Connected to database.");
-            } else {
-                System.out.println("Connection to database failed.");
+                throw new Exception( "Connection to database failed." );
             }
         }
         return connection;

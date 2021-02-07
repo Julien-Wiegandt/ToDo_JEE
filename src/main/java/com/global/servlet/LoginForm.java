@@ -12,8 +12,8 @@ public final class LoginForm {
     private static final String EMAIL_INPUT  = "email";
     private static final String PASSWORD_INPUT   = "password";
 
-    private String              result;
-    private Map<String, String> errors      = new HashMap<String, String>();
+    private String result;
+    private Map<String, String> errors = new HashMap<String, String>();
 
     public String getResults() {
         return result;
@@ -34,25 +34,24 @@ public final class LoginForm {
         /* get existing user if exists */
         try {
             existingUser = UserFacade.getUserFacade().findUserByEmail(email);
-        } catch (SQLException e) {
+            /* Email input validation */
+            try {
+                validationEmail( email , existingUser);
+            } catch ( Exception e ) {
+                setErrors( EMAIL_INPUT, e.getMessage() );
+            }
+            user.setEmail( email );
+
+            /* Password input validation */
+            try {
+                validationMotDePasse( password , existingUser);
+            } catch ( Exception e ) {
+                setErrors( PASSWORD_INPUT, e.getMessage() );
+            }
+            user.setPassword( password );
+        } catch (Exception e) {
             setErrors(EMAIL_INPUT, e.getMessage());
         }
-
-        /* Email input validation */
-        try {
-            validationEmail( email , existingUser);
-        } catch ( Exception e ) {
-            setErrors( EMAIL_INPUT, e.getMessage() );
-        }
-        user.setEmail( email );
-
-        /* Password input validation */
-        try {
-            validationMotDePasse( password , existingUser);
-        } catch ( Exception e ) {
-            setErrors( PASSWORD_INPUT, e.getMessage() );
-        }
-        user.setPassword( password );
 
         /* Init the global result of validation */
         if ( errors.isEmpty() ) {
@@ -75,7 +74,7 @@ public final class LoginForm {
             if ( password.length() < 3 ) {
                 throw new Exception( "The password must be higher than 3 characters." );
             }else if(existingUser != null && !existingUser.getPassword().equals(password)){
-                throw new Exception( "Wrong password." );
+                throw new Exception( "It's not your password." );
             }
         } else {
             throw new Exception( "Please enter your password." );

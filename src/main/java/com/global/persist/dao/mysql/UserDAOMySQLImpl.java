@@ -23,17 +23,16 @@ public class UserDAOMySQLImpl implements UserDAO {
                 String password = rs.getString("password");
                 user = new User(id, email, password);
             }
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-        } finally {
             statement.close();
             rs.close();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
         }
         return user;
     }
 
     @Override
-    public User findUserByEmail(String email) throws SQLException {
+    public User findUserByEmail(String email) {
         User user = null;
         PreparedStatement statement = null;
         ResultSet rs = null;
@@ -46,27 +45,30 @@ public class UserDAOMySQLImpl implements UserDAO {
                 String password = rs.getString("password");
                 user = new User(id, email, password);
             }
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-        } finally {
             statement.close();
             rs.close();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
         }
         return user;
     }
 
     @Override
-    public void createUser(User user) throws SQLException {
+    public void createUser(User user) throws Exception {
         PreparedStatement statement = null;
         try {
             statement = MySQLConnection.connection.prepareStatement("INSERT INTO User (user_pk, email, password) VALUES (null, ?, ?);");
             statement.setString(1, user.getEmail());
             statement.setString(2, user.getPassword());
             statement.executeUpdate();
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-        } finally {
             statement.close();
+        } catch (SQLException throwables) {
+            switch (throwables.getErrorCode()){
+                case 1062:
+                    throw new Exception( "E-mail adress already used" );
+                default:
+                    break;
+            }
         }
     }
 }

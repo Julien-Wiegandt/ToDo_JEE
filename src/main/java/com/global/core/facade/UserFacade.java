@@ -17,7 +17,7 @@ public class UserFacade {
     private UserDAO userDAO;
     private static UserFacade instance;
 
-    private UserFacade(){
+    private UserFacade() throws Exception {
         try {
             Properties prop=new Properties();
             FileInputStream ip= new FileInputStream("C:\\Users\\wiega\\Google Drive\\Development\\IdeaProjects\\ToDo_JEE\\config.properties");
@@ -33,7 +33,7 @@ public class UserFacade {
         }
     }
 
-    public static UserFacade getUserFacade() {
+    public static UserFacade getUserFacade() throws Exception {
         if (instance == null) {
             instance = new UserFacade();
         }
@@ -47,7 +47,7 @@ public class UserFacade {
         return this.userDAO.findUserByEmail(email);
     }
 
-    public void createUser(String email, String password) throws SQLException {
+    public void createUser(String email, String password) throws Exception {
         this.userDAO.createUser(new User(null, email, password));
     }
 }

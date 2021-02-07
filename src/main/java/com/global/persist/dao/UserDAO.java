@@ -10,5 +10,5 @@ public interface UserDAO {
 
     public User findUserByEmail(String email) throws SQLException;
 
-    public void createUser(User user) throws SQLException;
+    public void createUser(User user) throws Exception;
 }
