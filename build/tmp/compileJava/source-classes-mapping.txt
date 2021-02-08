@@ -1,29 +1,31 @@
 com/global/servlet/Index.java
  com.global.servlet.Index
-com/global/servlet/Register.java
- com.global.servlet.Register
-com/global/persist/dao/postgresql/PostgreSQLDAOFactory.java
- com.global.persist.dao.postgresql.PostgreSQLDAOFactory
+com/global/core/facade/UserFacade.java
+ com.global.core.facade.UserFacade
+com/global/persist/dao/mysql/MySQLConnection.java
+ com.global.persist.dao.mysql.MySQLConnection
+com/global/servlet/Profile.java
+ com.global.servlet.Profile
 com/global/core/bean/User.java
  com.global.core.bean.User
 com/global/persist/dao/DAOFactory.java
  com.global.persist.dao.DAOFactory
-com/global/persist/dao/UserDAO.java
- com.global.persist.dao.UserDAO
-com/global/servlet/Disconnect.java
- com.global.servlet.Disconnect
-com/global/persist/dao/postgresql/UserDAOPostgreSQLImpl.java
- com.global.persist.dao.postgresql.UserDAOPostgreSQLImpl
-com/global/core/facade/UserFacade.java
- com.global.core.facade.UserFacade
-com/global/servlet/RegisterForm.java
- com.global.servlet.RegisterForm
-com/global/persist/dao/mysql/MySQLConnection.java
- com.global.persist.dao.mysql.MySQLConnection
-com/global/persist/dao/mysql/MySQLDAOFactory.java
- com.global.persist.dao.mysql.MySQLDAOFactory
 com/global/persist/dao/mysql/UserDAOMySQLImpl.java
  com.global.persist.dao.mysql.UserDAOMySQLImpl
+com/global/servlet/Disconnect.java
+ com.global.servlet.Disconnect
+com/global/servlet/RegisterForm.java
+ com.global.servlet.RegisterForm
+com/global/servlet/Register.java
+ com.global.servlet.Register
+com/global/persist/dao/postgresql/UserDAOPostgreSQLImpl.java
+ com.global.persist.dao.postgresql.UserDAOPostgreSQLImpl
+com/global/persist/dao/UserDAO.java
+ com.global.persist.dao.UserDAO
+com/global/persist/dao/mysql/MySQLDAOFactory.java
+ com.global.persist.dao.mysql.MySQLDAOFactory
+com/global/persist/dao/postgresql/PostgreSQLDAOFactory.java
+ com.global.persist.dao.postgresql.PostgreSQLDAOFactory
 com/global/servlet/Login.java
  com.global.servlet.Login
 com/global/servlet/LoginForm.java

@@ -4,7 +4,7 @@
     <section class="container">
         <section class="row justify-content-center">
             <section class="col-12 col-sm-6 col-md-4">
-                <form method="post" >
+                <form method="post" action="register">
                     <div class="form-group">
                         <label for="email">Email address</label>
                         <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp" placeholder="Enter email">
