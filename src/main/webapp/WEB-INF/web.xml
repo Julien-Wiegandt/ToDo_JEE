@@ -56,4 +56,13 @@
         <url-pattern>/profile</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>AddTaskList</servlet-name>
+        <servlet-class>com.global.servlet.AddTaskList</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AddTaskList</servlet-name>
+        <url-pattern>/AddTaskList</url-pattern>
+    </servlet-mapping>
+
 </web-app>

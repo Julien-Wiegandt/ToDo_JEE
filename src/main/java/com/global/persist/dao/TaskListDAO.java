@@ -7,4 +7,10 @@ import java.util.Collection;
 
 public interface TaskListDAO {
     public Collection<TaskList> getTasksList(String user_id) throws SQLException;
+
+    public void addTaskList(TaskList taskList) throws SQLException;
+
+    public void deleteTaskList(TaskList taskList) throws SQLException;
+
+    public void updateTaskList(TaskList taskList) throws SQLException;
 }

@@ -7,7 +7,6 @@
             <h1>ToDo-JEE</h1>
             <h4>Welcome to a JEE ToDo List app!</h4>
         </div>
-
     </c:when>
     <c:otherwise>
         <div class="container">
@@ -17,10 +16,18 @@
                     <h4>Lists</h4>
                     <div class="row">
                         <c:forEach var="taskList" items="${taskLists}">
-                            <form class="col-12" action="index" method="post"><!-- faire plutot un put quand on ajoute des données-->
+                            <form class="TaskListForm col-12" action="index" method="post"><!-- faire plutot un put quand on ajoute des données-->
                                 <button name="taskList" value="${taskList.getId()}">${taskList.getLabel()}</button>
+                                <form class="col-12" action="DeleteTaskList" method="post">
+                                    <button class="TaskListDeleteForm" name="taskList" value="${taskList.getId()}">Delete</button>
+                                </form>
                             </form>
                         </c:forEach>
+                        <form class="col-12" action="AddTaskList" method="post">
+                            <input type="text" name="label" placeholder="Enter the List label">
+                            <button type="submit">Add</button>
+                            <span class="error">${AddTaskListForm.errors['label']}</span>
+                        </form>
                     </div>
 
                     </ul>

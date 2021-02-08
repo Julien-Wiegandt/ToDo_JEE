@@ -12,12 +12,12 @@
                         <form method="post" action="login">
                             <div class="form-group">
                                 <label for="email">Email address</label>
-                                <input type="email" class="form-control" name="email" id="email" value="<c:out value="${user.getEmail()}"/>" aria-describedby="emailHelp" placeholder="Enter email">
+                                <input type="email" class="form-control" name="email" id="email" value="user2@test.com" aria-describedby="emailHelp" placeholder="Enter email">
                                 <span class="errors">${form.errors['email']}</span>
                             </div>
                             <div class="form-group">
                                 <label for="password">Password</label>
-                                <input type="password" class="form-control" name="password" id="password" placeholder="Password">
+                                <input type="password" class="form-control" name="password" value="psd" id="password" placeholder="Password">
                                 <span class="error">${form.errors['password']}</span>
                             </div>
                             <!--

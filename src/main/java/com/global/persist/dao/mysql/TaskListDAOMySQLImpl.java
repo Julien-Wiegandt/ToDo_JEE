@@ -33,4 +33,48 @@ public class TaskListDAOMySQLImpl implements TaskListDAO {
         }
         return taskLists;
     }
+
+    @Override
+    public void addTaskList(TaskList taskList) throws SQLException {
+        PreparedStatement statement = null;
+        try {
+            statement = MySQLConnection.connection.prepareStatement("INSERT INTO TaskList (tasklist_pk, label, user_fk) VALUES (null, ?, ?);");
+            statement.setString(1, taskList.getLabel());
+            statement.setString(2, taskList.getUser_fk());
+            statement.executeUpdate();
+            statement.close();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+    }
+
+    @Override
+    public void deleteTaskList(TaskList taskList) throws SQLException {
+        PreparedStatement statement = null;
+        try {
+            statement = MySQLConnection.connection.prepareStatement("DELETE FROM Task WHERE tasklist_fk=?;");
+            statement.setString(1, taskList.getId());
+            statement.executeUpdate();
+            statement = MySQLConnection.connection.prepareStatement("DELETE FROM TaskList WHERE tasklist_pk=?;");
+            statement.setString(1, taskList.getId());
+            statement.executeUpdate();
+            statement.close();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+    }
+
+    @Override
+    public void updateTaskList(TaskList taskList) throws SQLException {
+        PreparedStatement statement = null;
+        try {
+            statement = MySQLConnection.connection.prepareStatement("UPDATE TaskList SET label=? WHERE tasklist_pk=?");
+            statement.setString(1, taskList.getLabel());
+            statement.setString(2, taskList.getId());
+            statement.executeUpdate();
+            statement.close();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+    }
 }
