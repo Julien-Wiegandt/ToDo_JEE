@@ -65,9 +65,30 @@ public class UserDAOMySQLImpl implements UserDAO {
         } catch (SQLException throwables) {
             switch (throwables.getErrorCode()){
                 case 1062:
-                    throw new Exception( "E-mail adress already used" );
+                    throw new Exception( "E-mail address already used." );
                 default:
                     break;
+            }
+        }
+    }
+
+    @Override
+    public void updateUser(User user) throws Exception {
+        PreparedStatement statement = null;
+        try {
+            statement = MySQLConnection.connection.prepareStatement("UPDATE User SET email=?, password=? WHERE user_pk=?;");
+            statement.setString(1, user.getEmail());
+            statement.setString(2, user.getPassword());
+            statement.setString(3, user.getId());
+            statement.executeUpdate();
+            statement.close();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+            switch (throwables.getErrorCode()){
+                case 1062:
+                    throw new Exception( "E-mail address already used." );
+                default:
+                    throw new Exception( "Update User in database issue." );
             }
         }
     }

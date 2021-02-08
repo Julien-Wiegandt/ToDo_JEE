@@ -1,5 +1,7 @@
 com/global/servlet/Index.java
  com.global.servlet.Index
+com/global/servlet/ProfileForm.java
+ com.global.servlet.ProfileForm
 com/global/core/facade/UserFacade.java
  com.global.core.facade.UserFacade
 com/global/persist/dao/mysql/MySQLConnection.java

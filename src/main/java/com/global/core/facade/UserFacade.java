@@ -50,4 +50,8 @@ public class UserFacade {
     public void createUser(String email, String password) throws Exception {
         this.userDAO.createUser(new User(null, email, password));
     }
+
+    public void updateUser(String id, String email, String password) throws Exception{
+        this.userDAO.updateUser(new User(id, email, password));
+    }
 }

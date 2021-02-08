@@ -28,33 +28,35 @@ public final class LoginForm {
         String email = request.getParameter(EMAIL_INPUT);
         String password = request.getParameter(PASSWORD_INPUT);
 
-        User user = new User();
-
-        User existingUser = null;
+        User user = null;
         /* get existing user if exists */
         try {
-            existingUser = UserFacade.getUserFacade().findUserByEmail(email);
+            user = UserFacade.getUserFacade().findUserByEmail(email);
             /* Email input validation */
             try {
-                validationEmail( email , existingUser);
+                validationEmail( email , user);
             } catch ( Exception e ) {
                 setErrors( EMAIL_INPUT, e.getMessage() );
             }
-            user.setEmail( email );
 
             /* Password input validation */
             try {
-                validationMotDePasse( password , existingUser);
+                validationMotDePasse( password , user);
             } catch ( Exception e ) {
                 setErrors( PASSWORD_INPUT, e.getMessage() );
             }
-            user.setPassword( password );
         } catch (Exception e) {
             setErrors(EMAIL_INPUT, e.getMessage());
         }
 
+
         /* Init the global result of validation */
         if ( errors.isEmpty() ) {
+            try {
+                user = UserFacade.getUserFacade().findUserByEmail(email);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
             result = "Connexion success.";
         } else {
             result = "Connexion issue.";

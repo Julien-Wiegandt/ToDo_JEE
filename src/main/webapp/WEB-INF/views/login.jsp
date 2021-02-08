@@ -6,7 +6,7 @@
             <section class="col-12 col-sm-6 col-md-4">
                 <c:choose>
                     <c:when test="${!empty sessionScope.userSession}">
-                        <p> <c:out value="Connected as ${sessionScope.userSession.getEmail()}"/> </p>
+                        <p> <c:out value="Connected as ${sessionScope.userSession.getId()}"/> </p>
                     </c:when>
                     <c:otherwise>
                         <form method="post" action="login">

@@ -12,9 +12,9 @@ import java.io.IOException;
 import java.sql.SQLException;
 
 public class Login extends HttpServlet {
-    public static final String ATT_USER         = "user";
     public static final String ATT_FORM         = "form";
     public static final String ATT_USER_SESSION = "userSession";
+    public static final String URL_REDIRECTION = "/";
     public static final String VIEW             = "/WEB-INF/views/login.jsp";
 
     public void init() {
@@ -40,13 +40,11 @@ public class Login extends HttpServlet {
 
         if ( form.getErrors().isEmpty() ) {
             session.setAttribute( ATT_USER_SESSION, user );
+            response.sendRedirect(URL_REDIRECTION);
         } else {
-            session.setAttribute( ATT_USER_SESSION, null );
+            request.setAttribute( ATT_FORM, form );
+            this.getServletContext().getRequestDispatcher(VIEW).forward( request, response );
         }
-        request.setAttribute( ATT_FORM, form );
-        request.setAttribute( ATT_USER, user );
-
-        this.getServletContext().getRequestDispatcher(VIEW).forward( request, response );
     }
 
     public void destroy() {
