@@ -2,6 +2,7 @@ package com.global.core.facade;
 
 import com.global.core.bean.User;
 import com.global.persist.dao.DAOFactory;
+import com.global.persist.dao.TaskListDAO;
 import com.global.persist.dao.UserDAO;
 import com.global.persist.dao.mysql.MySQLDAOFactory;
 import com.global.persist.dao.postgresql.PostgreSQLDAOFactory;
@@ -11,13 +12,12 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.Properties;
 
-public class UserFacade {
-
+public class TaskListFacade {
     private DAOFactory daoFactory;
-    private UserDAO userDAO;
+    private TaskListDAO taskListDAO;
     private static UserFacade instance;
 
-    private UserFacade() throws Exception {
+    private TaskListFacade() throws Exception {
         try {
             Properties prop=new Properties();
             FileInputStream ip= new FileInputStream("C:\\Users\\wiega\\Google Drive\\Development\\IdeaProjects\\ToDo_JEE\\config.properties");
@@ -27,30 +27,18 @@ public class UserFacade {
             }else{
                 this.daoFactory = new PostgreSQLDAOFactory();
             }
-            this.userDAO = daoFactory.createUserDAO();
+            this.taskListDAO = daoFactory.createTaskListDAO();
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    public static UserFacade getUserFacade() throws Exception {
+    public static TaskListFacade getUserFacade() throws Exception {
         if (instance == null) {
-            instance = new UserFacade();
+            instance = new TaskListFacade();
         }
         return instance;
     }
 
-    public User findUserbyId(String id) throws SQLException { return this.userDAO.findUserById(id); }
-
-    public User findUserByEmail(String email) throws SQLException {
-        return this.userDAO.findUserByEmail(email);
-    }
-
-    public void createUser(String email, String password) throws Exception {
-        this.userDAO.createUser(new User(null, email, password));
-    }
-
-    public void updateUser(String id, String email, String password) throws Exception{
-        this.userDAO.updateUser(new User(id, email, password));
-    }
+    public User getTasksList(String user_id) throws SQLException { return this.taskListDAO.getTasksList(user_id); }
 }
