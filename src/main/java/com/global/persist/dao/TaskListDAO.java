@@ -1,9 +1,10 @@
 package com.global.persist.dao;
 
-import com.global.core.bean.User;
+import com.global.core.bean.TaskList;
 
 import java.sql.SQLException;
+import java.util.Collection;
 
 public interface TaskListDAO {
-    public User getTasksList(String user_id) throws SQLException;
+    public Collection<TaskList> getTasksList(String user_id) throws SQLException;
 }

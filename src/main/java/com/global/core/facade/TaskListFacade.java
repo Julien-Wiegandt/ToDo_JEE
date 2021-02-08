@@ -1,5 +1,6 @@
 package com.global.core.facade;
 
+import com.global.core.bean.TaskList;
 import com.global.core.bean.User;
 import com.global.persist.dao.DAOFactory;
 import com.global.persist.dao.TaskListDAO;
@@ -10,12 +11,13 @@ import com.global.persist.dao.postgresql.PostgreSQLDAOFactory;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.Collection;
 import java.util.Properties;
 
 public class TaskListFacade {
     private DAOFactory daoFactory;
     private TaskListDAO taskListDAO;
-    private static UserFacade instance;
+    private static TaskListFacade instance;
 
     private TaskListFacade() throws Exception {
         try {
@@ -33,12 +35,12 @@ public class TaskListFacade {
         }
     }
 
-    public static TaskListFacade getUserFacade() throws Exception {
+    public static TaskListFacade getTaskListFacade() throws Exception {
         if (instance == null) {
             instance = new TaskListFacade();
         }
         return instance;
     }
 
-    public User getTasksList(String user_id) throws SQLException { return this.taskListDAO.getTasksList(user_id); }
+    public Collection<TaskList> getTasksList(String user_id) throws SQLException { return this.taskListDAO.getTasksList(user_id); }
 }

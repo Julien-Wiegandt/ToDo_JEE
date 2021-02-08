@@ -17,7 +17,7 @@
                     <h4>Lists</h4>
                     <ul>
                         <c:forEach var="taskList" items="${taskLists}">
-                            <li>${taskList.getLabel()}</li>
+                            <li>${taskList.label}</li>
                         </c:forEach>
                     </ul>
                 </section>

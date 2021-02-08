@@ -29,7 +29,7 @@ public class TaskFacade {
             }else{
                 this.daoFactory = new PostgreSQLDAOFactory();
             }
-            this.taskDAO = daoFactory.createUserDAO();
+            this.taskDAO = daoFactory.createTaskDAO();
         } catch (IOException e) {
             e.printStackTrace();
         }

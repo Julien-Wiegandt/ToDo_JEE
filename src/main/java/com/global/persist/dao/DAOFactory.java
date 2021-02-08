@@ -4,7 +4,7 @@ public abstract class DAOFactory {
 
     public abstract UserDAO createUserDAO();
 
-    public abstract UserDAO createTaskDAO();
+    public abstract TaskDAO createTaskDAO();
 
-    public abstract UserDAO createTaskListDAO();
+    public abstract TaskListDAO createTaskListDAO();
 }
