@@ -15,10 +15,14 @@
             <section class="row">
                 <section class="col-sm-6">
                     <h4>Lists</h4>
-                    <ul>
+                    <div class="row">
                         <c:forEach var="taskList" items="${taskLists}">
-                            <li>${taskList.label}</li>
+                            <form class="col-12" action="index" method="post"><!-- faire plutot un put quand on ajoute des données-->
+                                <button name="taskList" value="${taskList.getId()}">${taskList.getLabel()}</button>
+                            </form>
                         </c:forEach>
+                    </div>
+
                     </ul>
                 </section>
                 <section class="col-sm-6">

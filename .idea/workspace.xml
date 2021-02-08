@@ -5,16 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="70791fbf-36a9-4497-8c4e-9c4fbc28a417" name="Default Changelist" comment="line deleted for git account test">
-      <change beforePath="$PROJECT_DIR$/.idea/ToDo_JEE.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ToDo_JEE.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/global/core/facade/TaskFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/global/core/facade/TaskFacade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/global/core/facade/TaskListFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/global/core/facade/TaskListFacade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/global/persist/dao/DAOFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/global/persist/dao/DAOFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/global/persist/dao/TaskListDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/global/persist/dao/TaskListDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/global/persist/dao/mysql/TaskDAOMySQLImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/global/persist/dao/mysql/TaskDAOMySQLImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/global/persist/dao/mysql/TaskListDAOMySQLImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/global/persist/dao/mysql/TaskListDAOMySQLImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/global/persist/dao/postgresql/PostgreSQLDAOFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/global/persist/dao/postgresql/PostgreSQLDAOFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/global/servlet/Index.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/global/servlet/Index.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/head.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/head.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
