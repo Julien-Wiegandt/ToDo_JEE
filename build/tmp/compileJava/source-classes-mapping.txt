@@ -4,8 +4,8 @@ com/global/core/bean/TaskList.java
  com.global.core.bean.TaskList
 com/global/core/bean/Task.java
  com.global.core.bean.Task
-com/global/persist/dao/postgresql/PostgreSQLDAOFactory.java
- com.global.persist.dao.postgresql.PostgreSQLDAOFactory
+com/global/servlet/AddTaskListForm.java
+ com.global.servlet.AddTaskListForm
 com/global/servlet/ProfileForm.java
  com.global.servlet.ProfileForm
 com/global/core/facade/UserFacade.java
@@ -22,8 +22,10 @@ com/global/servlet/Disconnect.java
  com.global.servlet.Disconnect
 com/global/servlet/RegisterForm.java
  com.global.servlet.RegisterForm
-com/global/persist/dao/TaskDAO.java
- com.global.persist.dao.TaskDAO
+com/global/servlet/DeleteTask.java
+ com.global.servlet.DeleteTask
+com/global/util/RegexPattern.java
+ com.global.util.RegexPattern
 com/global/persist/dao/TaskListDAO.java
  com.global.persist.dao.TaskListDAO
 com/global/persist/dao/UserDAO.java
@@ -50,7 +52,13 @@ com/global/servlet/Register.java
  com.global.servlet.Register
 com/global/persist/dao/postgresql/UserDAOPostgreSQLImpl.java
  com.global.persist.dao.postgresql.UserDAOPostgreSQLImpl
-com/global/util/RegexPattern.java
- com.global.util.RegexPattern
-com/global/servlet/AddTaskListForm.java
- com.global.servlet.AddTaskListForm
+com/global/servlet/DeleteTaskList.java
+ com.global.servlet.DeleteTaskList
+com/global/servlet/AddTask.java
+ com.global.servlet.AddTask
+com/global/persist/dao/postgresql/PostgreSQLDAOFactory.java
+ com.global.persist.dao.postgresql.PostgreSQLDAOFactory
+com/global/persist/dao/TaskDAO.java
+ com.global.persist.dao.TaskDAO
+com/global/servlet/AddTaskForm.java
+ com.global.servlet.AddTaskForm

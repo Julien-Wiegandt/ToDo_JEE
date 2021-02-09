@@ -14,31 +14,44 @@
             <section class="row">
                 <section class="col-sm-6">
                     <h4>Lists</h4>
-                    <div class="row">
-                        <c:forEach var="taskList" items="${taskLists}">
-                            <form class="TaskListForm col-12" action="index" method="post"><!-- faire plutot un put quand on ajoute des données-->
+                    <c:forEach var="taskList" items="${taskLists}">
+                        <div class="row">
+                            <form class="display-inline col-6" action="index" method="post"><!-- faire plutot un put quand on ajoute des données-->
                                 <button name="taskList" value="${taskList.getId()}">${taskList.getLabel()}</button>
-                                <form class="col-12" action="DeleteTaskList" method="post">
-                                    <button class="TaskListDeleteForm" name="taskList" value="${taskList.getId()}">Delete</button>
-                                </form>
                             </form>
-                        </c:forEach>
-                        <form class="col-12" action="AddTaskList" method="post">
+                            <form class="display-inline col-6" action="DeleteTaskList" method="post">
+                                <button type="submit" class="TaskListDeleteForm" name="deleteTaskList" value="${taskList.getId()}">Delete</button>
+                            </form>
+                        </div>
+                    </c:forEach>
+                    <div class="row">
+                        <form class="display-inline col-12" action="AddTaskList" method="post">
                             <input type="text" name="label" placeholder="Enter the List label">
                             <button type="submit">Add</button>
                             <span class="error">${AddTaskListForm.errors['label']}</span>
                         </form>
                     </div>
-
-                    </ul>
                 </section>
                 <section class="col-sm-6">
                     <h4>Tasks</h4>
-                    <ul>
                         <c:forEach var="task" items="${tasks}">
-                            <li>${task.getLabel()}</li>
+                            <c:if test="${task.list_fk == current_tasklist_id}">
+                                <div class="row">
+                                    <form class="display-inline col-6" action="DeleteTask" method="post">
+                                        <p class="display-inline">${task.getLabel()}</p>
+                                        <button type="submit" class="TaskDeleteForm" name="deleteTask" value="${task.getId()}">Delete</button>
+                                    </form>
+                                </div>
+                            </c:if>
                         </c:forEach>
-                    </ul>
+                        <div class="row">
+                            <form class="display-inline col-12" action="AddTask" method="post">
+                                <input type="text" name="label" placeholder="Enter the Task label">
+                                <input type="hidden" name="current_tasklist_id" value="${current_tasklist_id}">
+                                <button type="submit">Add</button>
+                                <span class="error">${AddTaskForm.errors['label']}</span>
+                            </form>
+                        </div>
                 </section>
             </section>
         </div>

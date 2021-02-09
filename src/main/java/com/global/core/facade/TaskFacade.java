@@ -1,6 +1,7 @@
 package com.global.core.facade;
 
 import com.global.core.bean.Task;
+import com.global.core.bean.TaskList;
 import com.global.core.bean.User;
 import com.global.persist.dao.DAOFactory;
 import com.global.persist.dao.TaskDAO;
@@ -42,5 +43,17 @@ public class TaskFacade {
         return instance;
     }
 
-    public Collection<Task> getTasks(String taskList_id) throws SQLException { return this.taskDAO.getTasks(taskList_id); }
+    public Collection<Task> getTasks(String user_id) throws SQLException { return this.taskDAO.getTasks(user_id); }
+
+    public void addTask(String label, String user_id) throws SQLException {
+        this.taskDAO.addTask(new Task(null, label, user_id));
+    }
+
+    public void deleteTask(String id) throws SQLException{
+        this.taskDAO.deleteTask(id);
+    }
+
+    public void updateTask(String label, String user_id) throws SQLException{
+        this.taskDAO.updateTask(new Task(null, label, user_id));
+    }
 }

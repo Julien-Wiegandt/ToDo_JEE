@@ -30,6 +30,8 @@ public class TaskListDAOMySQLImpl implements TaskListDAO {
             rs.close();
         } catch (SQLException throwables) {
             throwables.printStackTrace();
+        }finally {
+            System.out.println("TaskLists getted.");
         }
         return taskLists;
     }
@@ -45,22 +47,26 @@ public class TaskListDAOMySQLImpl implements TaskListDAO {
             statement.close();
         } catch (SQLException throwables) {
             throwables.printStackTrace();
+        }finally {
+            System.out.println("TaskList added.");
         }
     }
 
     @Override
-    public void deleteTaskList(TaskList taskList) throws SQLException {
+    public void deleteTaskList(String id) throws SQLException {
         PreparedStatement statement = null;
         try {
             statement = MySQLConnection.connection.prepareStatement("DELETE FROM Task WHERE tasklist_fk=?;");
-            statement.setString(1, taskList.getId());
+            statement.setString(1, id);
             statement.executeUpdate();
             statement = MySQLConnection.connection.prepareStatement("DELETE FROM TaskList WHERE tasklist_pk=?;");
-            statement.setString(1, taskList.getId());
+            statement.setString(1, id);
             statement.executeUpdate();
             statement.close();
         } catch (SQLException throwables) {
             throwables.printStackTrace();
+        }finally {
+            System.out.println("TaskList deleted.");
         }
     }
 
@@ -75,6 +81,8 @@ public class TaskListDAOMySQLImpl implements TaskListDAO {
             statement.close();
         } catch (SQLException throwables) {
             throwables.printStackTrace();
+        }finally {
+            System.out.println("TaskList updated.");
         }
     }
 }

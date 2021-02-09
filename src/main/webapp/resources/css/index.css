@@ -1,11 +1,12 @@
+/*
 .TaskListDeleteForm{
     display: none;
 }
 
-.TaskListForm:hover TaskListDeleteForm{
+.TaskListForm:hover .TaskListDeleteForm{
     display: block;
 }
-
-body{
-    background-color: aqua;
+*/
+.display-inline{
+    display: inline-block;
 }

@@ -48,8 +48,8 @@ public class TaskListFacade {
         this.taskListDAO.addTaskList(new TaskList(null, label, user_id));
     }
 
-    public void deleteTaskList(TaskList taskList) throws SQLException{
-        this.taskListDAO.deleteTaskList(taskList);
+    public void deleteTaskList(String id) throws SQLException{
+        this.taskListDAO.deleteTaskList(id);
     }
 
     public void updateTaskList(String label, String user_id) throws SQLException{

@@ -49,6 +49,8 @@ public class UserDAOMySQLImpl implements UserDAO {
             rs.close();
         } catch (SQLException throwables) {
             throwables.printStackTrace();
+        }finally {
+            System.out.println("User finded by email.");
         }
         return user;
     }
@@ -69,6 +71,8 @@ public class UserDAOMySQLImpl implements UserDAO {
                 default:
                     break;
             }
+        }finally {
+            System.out.println("User created.");
         }
     }
 
@@ -90,6 +94,8 @@ public class UserDAOMySQLImpl implements UserDAO {
                 default:
                     throw new Exception( "Update User in database issue." );
             }
+        }finally {
+            System.out.println("User updated.");
         }
     }
 }

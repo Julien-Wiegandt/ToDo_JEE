@@ -12,24 +12,76 @@ import java.util.Collection;
 
 public class TaskDAOMySQLImpl implements TaskDAO {
     @Override
-    public Collection<Task> getTasks(String taskList_id) throws SQLException {
+    public Collection<Task> getTasks(String user_id) throws SQLException {
         Collection<Task> tasks = new ArrayList<>();
         PreparedStatement statement = null;
         ResultSet rs = null;
         try {
-            statement = MySQLConnection.connection.prepareStatement("SELECT * FROM Task WHERE tasklist_fk = ?;");
-            statement.setString(1, taskList_id);
+            statement = MySQLConnection.connection.prepareStatement("SELECT * FROM Task, TaskList WHERE  user_fk=? AND tasklist_fk=tasklist_pk;");
+            statement.setInt(1, Integer.valueOf(user_id));
             rs = statement.executeQuery();
             while(rs.next()) {
                 String id = rs.getString("task_pk");
                 String label = rs.getString("label");
+                String taskList_id = rs.getString("tasklist_fk");
                 tasks.add(new Task(id, label, taskList_id));
             }
             statement.close();
             rs.close();
         } catch (SQLException throwables) {
             throwables.printStackTrace();
+        }finally {
+            System.out.println("Tasks getted.");
         }
         return tasks;
+    }
+
+
+    @Override
+    public void addTask(Task task) throws SQLException {
+        PreparedStatement statement = null;
+        try {
+            statement = MySQLConnection.connection.prepareStatement("INSERT INTO Task (task_pk, label, tasklist_fk) VALUES (null, ?, ?);");
+            statement.setString(1, task.getLabel());
+            statement.setInt(2, Integer.valueOf(task.getList_fk()));
+            statement.executeUpdate();
+            statement.close();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }finally {
+            System.out.println("Task added.");
+        }
+    }
+
+    @Override
+    public void deleteTask(String id) throws SQLException {
+        PreparedStatement statement = null;
+        try {
+            statement = MySQLConnection.connection.prepareStatement("DELETE FROM Task WHERE task_pk=?;");
+            statement.setString(1, id);
+            statement.executeUpdate();
+            statement.close();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        finally {
+            System.out.println("Task deleted.");
+        }
+    }
+
+    @Override
+    public void updateTask(Task task) throws SQLException {
+        PreparedStatement statement = null;
+        try {
+            statement = MySQLConnection.connection.prepareStatement("UPDATE Task SET label=? WHERE task_pk=?");
+            statement.setString(1, task.getLabel());
+            statement.setString(2, task.getId());
+            statement.executeUpdate();
+            statement.close();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }finally {
+            System.out.println("Task updated.");
+        }
     }
 }

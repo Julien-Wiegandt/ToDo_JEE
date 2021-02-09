@@ -10,7 +10,7 @@ public interface TaskListDAO {
 
     public void addTaskList(TaskList taskList) throws SQLException;
 
-    public void deleteTaskList(TaskList taskList) throws SQLException;
+    public void deleteTaskList(String id) throws SQLException;
 
     public void updateTaskList(TaskList taskList) throws SQLException;
 }
