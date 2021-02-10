@@ -6,45 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="70791fbf-36a9-4497-8c4e-9c4fbc28a417" name="Default Changelist" comment="line deleted for git account test">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/config.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/documentation/database/mysql/create.sql" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/database/mysql/create.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/documentation/database/mysql/insert.sql" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/database/mysql/insert.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/global/core/bean/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/global/core/bean/Task.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/global/core/bean/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/global/core/bean/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/global/core/facade/TaskFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/global/core/facade/TaskFacade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/global/core/facade/TaskListFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/global/core/facade/TaskListFacade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/global/core/facade/UserFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/global/core/facade/UserFacade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/global/persist/dao/TaskDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/global/persist/dao/TaskDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/global/persist/dao/TaskListDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/global/persist/dao/TaskListDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/global/persist/dao/mysql/MySQLConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/global/persist/dao/mysql/MySQLConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/global/persist/dao/mysql/MySQLDAOFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/global/persist/dao/mysql/MySQLDAOFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/global/persist/dao/mysql/TaskDAOMySQLImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/global/persist/dao/mysql/TaskDAOMySQLImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/global/persist/dao/mysql/TaskListDAOMySQLImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/global/persist/dao/mysql/TaskListDAOMySQLImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/global/persist/dao/mysql/UserDAOMySQLImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/global/persist/dao/mysql/UserDAOMySQLImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/global/persist/dao/postgresql/PostgreSQLDAOFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/global/persist/dao/postgresql/PostgreSQLDAOFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/global/servlet/AddTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/global/servlet/AddTask.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/global/servlet/AddTaskForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/global/servlet/AddTaskForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/global/servlet/AddTaskList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/global/servlet/AddTaskList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/global/servlet/AddTaskListForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/global/servlet/AddTaskListForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/global/servlet/DeleteTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/global/servlet/DeleteTask.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/global/servlet/DeleteTaskList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/global/servlet/DeleteTaskList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/global/servlet/Disconnect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/global/servlet/Disconnect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/global/servlet/Index.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/global/servlet/Index.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/global/servlet/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/global/servlet/Login.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/global/servlet/LoginForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/global/servlet/LoginForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/global/servlet/Profile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/global/servlet/Profile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/global/servlet/ProfileForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/global/servlet/ProfileForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/global/servlet/Register.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/global/servlet/Register.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/global/servlet/RegisterForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/global/servlet/RegisterForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/global/util/RegexPattern.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/global/util/RegexPattern.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/beans.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/beans.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/head.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/head.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/login.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/profile.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/profile.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/register.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/css/index.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
