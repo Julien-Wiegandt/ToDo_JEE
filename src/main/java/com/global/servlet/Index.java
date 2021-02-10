@@ -53,6 +53,7 @@ public class Index extends HttpServlet {
         String taskList_id = request.getParameter(TASKLIST_ID_INPUT);
         HttpSession session = request.getSession();
         User user = (User)(session.getAttribute(Login.ATT_USER_SESSION));
+
         if(user != null) {
             try {
                 taskLists = (ArrayList) TaskListFacade.getTaskListFacade().getTasksList(user.getId());
@@ -75,5 +76,21 @@ public class Index extends HttpServlet {
     }
 
     public void destroy() {
+    }
+
+    public ArrayList<Task> getTasks() {
+        return tasks;
+    }
+
+    public void setTasks(ArrayList<Task> tasks) {
+        this.tasks = tasks;
+    }
+
+    public ArrayList<TaskList> getTaskLists() {
+        return taskLists;
+    }
+
+    public void setTaskLists(ArrayList<TaskList> taskLists) {
+        this.taskLists = taskLists;
     }
 }

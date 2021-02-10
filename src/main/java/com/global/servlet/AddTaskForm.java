@@ -1,5 +1,6 @@
 package com.global.servlet;
 
+import com.global.core.bean.Task;
 import com.global.core.bean.User;
 import com.global.core.facade.TaskFacade;
 import com.global.core.facade.TaskListFacade;
