@@ -74,7 +74,7 @@ public final class LoginForm {
         if (password != null && !password.isEmpty()) {
             if (password.length() < 3) {
                 throw new Exception("The password must be higher than 3 characters.");
-            } else if (existingUser != null && !existingUser.getPassword().equals(password)) {
+            } else if (existingUser != null && !UserFacade.getUserFacade().verifyPassword(existingUser.getId(), password)) {
                 throw new Exception("It's not your password.");
             }
         } else {

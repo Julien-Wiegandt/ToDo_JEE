@@ -23,8 +23,6 @@ public class Index extends HttpServlet {
     public static final String TASKLIST = "taskLists";
     public static final String TASKLIST_ID_INPUT = "taskList";
 
-    public static String current_tasklist_id = null;
-
     public void init() {
     }
 
@@ -32,6 +30,7 @@ public class Index extends HttpServlet {
         /* getting the user session */
         HttpSession session = request.getSession();
         User user = (User) (session.getAttribute(Login.ATT_USER_SESSION));
+        String current_tasklist_id = (String) session.getAttribute(CURRENT_TASKLIST_ID);
 
         ArrayList<TaskList> taskLists = null;
         ArrayList<Task> tasks = null;
@@ -53,13 +52,15 @@ public class Index extends HttpServlet {
             if (current_tasklist_id == null && !taskLists.isEmpty()) {
                 current_tasklist_id = taskLists.get(0).getId();
             }
-            request.setAttribute(CURRENT_TASKLIST_ID, current_tasklist_id);
+            session.setAttribute(CURRENT_TASKLIST_ID, current_tasklist_id);
         }
         this.getServletContext().getRequestDispatcher(VIEW).forward(request, response);
     }
 
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-        current_tasklist_id = request.getParameter(TASKLIST_ID_INPUT);
+        HttpSession session = request.getSession();
+
+        session.setAttribute(CURRENT_TASKLIST_ID, request.getParameter(TASKLIST_ID_INPUT));
 
         response.sendRedirect(URL_REDIRECTION);
     }

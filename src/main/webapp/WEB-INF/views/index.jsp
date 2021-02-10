@@ -21,7 +21,14 @@
                                     <div class="col-xs-9">
                                         <form action="index" method="post">
                                             <!-- faire plutot un put quand on ajoute des données-->
-                                            <button name="taskList" class="full-width TaskList" value="${taskList.getId()}">${taskList.getLabel()}</button>
+                                            <c:choose>
+                                                <c:when test="${taskList.getId() == sessionScope.current_tasklist_id}">
+                                                    <button name="taskList" class="full-width TaskList ActiveTaskList" value="${taskList.getId()}">${taskList.getLabel()}</button>
+                                                </c:when>
+                                                <c:otherwise>
+                                                    <button name="taskList" class="full-width TaskList" value="${taskList.getId()}">${taskList.getLabel()}</button>
+                                                </c:otherwise>
+                                            </c:choose>
                                         </form>
                                     </div>
                                     <div class="col-xs-3">
@@ -45,7 +52,7 @@
                     <h4>Tasks</h4>
                     <div class="d-flex flex-column">
                         <c:forEach var="task" items="${tasks}">
-                            <c:if test="${task.list_fk == current_tasklist_id}">
+                            <c:if test="${task.list_fk == sessionScope.current_tasklist_id}">
                                 <div class="p-2">
                                     <div class="row">
                                         <div class="col-xs-9">

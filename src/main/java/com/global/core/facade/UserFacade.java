@@ -55,4 +55,8 @@ public class UserFacade {
     public void updateUser(String id, String email, String password) throws Exception {
         this.userDAO.updateUser(new User(id, email, password));
     }
+
+    public Boolean verifyPassword(String id, String password){
+        return this.userDAO.verifyPassword(id, password);
+    }
 }

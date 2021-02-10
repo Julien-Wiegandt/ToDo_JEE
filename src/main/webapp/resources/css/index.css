@@ -17,7 +17,7 @@ body{
 
 
 .TaskList{
-    background-color: #d1d1e0; /* Green */
+    background-color: #d1d1e0;
     border: none;
     color: black;
     text-align: center;
@@ -26,5 +26,9 @@ body{
 }
 
 .TaskList:hover{
+    background-color: white;
+}
+
+.ActiveTaskList{
     background-color: white;
 }

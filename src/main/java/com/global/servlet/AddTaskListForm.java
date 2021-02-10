@@ -1,5 +1,6 @@
 package com.global.servlet;
 
+import com.global.core.bean.TaskList;
 import com.global.core.bean.User;
 import com.global.core.facade.TaskListFacade;
 import com.global.util.RegexPattern;

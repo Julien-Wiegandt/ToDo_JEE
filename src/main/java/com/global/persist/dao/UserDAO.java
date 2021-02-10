@@ -10,6 +10,8 @@ public interface UserDAO {
 
     public User findUserByEmail(String email) throws SQLException;
 
+    Boolean verifyPassword(String id, String password);
+
     public void createUser(User user) throws Exception;
 
     public void updateUser(User user) throws Exception;

@@ -4,6 +4,7 @@ import com.global.core.facade.TaskFacade;
 import com.global.util.RegexPattern;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -23,6 +24,7 @@ public class AddTaskForm {
 
     public void createTask(HttpServletRequest request) {
         /* Get form inputs */
+        HttpSession session = request.getSession();
         String label = request.getParameter(LABEL_INPUT);
 
         try {
@@ -32,7 +34,7 @@ public class AddTaskForm {
         }
         if (errors.isEmpty()) {
             try {
-                TaskFacade.getTaskFacade().addTask(label, Index.current_tasklist_id);
+                TaskFacade.getTaskFacade().addTask(label, (String) session.getAttribute(Index.CURRENT_TASKLIST_ID));
             } catch (Exception e) {
                 setErrors(LABEL_INPUT, e.getMessage());
             }

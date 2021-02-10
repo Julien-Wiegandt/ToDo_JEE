@@ -56,10 +56,31 @@ public class UserDAOMySQLImpl implements UserDAO {
     }
 
     @Override
+    public Boolean verifyPassword(String id, String password) {
+        Boolean find = false;
+        PreparedStatement statement = null;
+        ResultSet rs = null;
+        try {
+            statement = MySQLConnection.connection.prepareStatement("SELECT * FROM User WHERE user_pk = ? AND password = SHA1(?);");
+            statement.setString(1, id);
+            statement.setString(2, password);
+            rs = statement.executeQuery();
+            while (rs.next()) {
+                find = true;
+            }
+            statement.close();
+            rs.close();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return find;
+    }
+
+    @Override
     public void createUser(User user) throws Exception {
         PreparedStatement statement = null;
         try {
-            statement = MySQLConnection.connection.prepareStatement("INSERT INTO User (user_pk, email, password) VALUES (null, ?, ?);");
+            statement = MySQLConnection.connection.prepareStatement("INSERT INTO User (user_pk, email, password) VALUES (null, ?, SHA1(?));");
             statement.setString(1, user.getEmail());
             statement.setString(2, user.getPassword());
             statement.executeUpdate();

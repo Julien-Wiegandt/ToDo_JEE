@@ -54,7 +54,7 @@ public class AddTaskList extends HttpServlet {
             request.setAttribute(ATT_FORM, form);
         }
 
-        request.setAttribute(Index.CURRENT_TASKLIST_ID, Index.current_tasklist_id);
+        session.setAttribute(Index.CURRENT_TASKLIST_ID, taskLists.get(taskLists.size()-1).getId());
         this.getServletContext().getRequestDispatcher(VIEW).forward(request, response);
     }
 }

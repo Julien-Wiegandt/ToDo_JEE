@@ -15,6 +15,11 @@ public class UserDAOPostgreSQLImpl implements UserDAO {
     }
 
     @Override
+    public Boolean verifyPassword(String id, String password) {
+        return null;
+    }
+
+    @Override
     public void createUser(User user) {
 
     }
