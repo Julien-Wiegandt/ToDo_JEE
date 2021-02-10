@@ -10,15 +10,15 @@ public class MySQLDAOFactory extends DAOFactory {
         new MySQLConnection();
     }
 
-    public UserDAO createUserDAO(){
+    public UserDAO createUserDAO() {
         return new UserDAOMySQLImpl();
     }
 
-    public TaskDAO createTaskDAO(){
+    public TaskDAO createTaskDAO() {
         return new TaskDAOMySQLImpl();
     }
 
-    public TaskListDAO createTaskListDAO(){
+    public TaskListDAO createTaskListDAO() {
         return new TaskListDAOMySQLImpl();
     }
 }

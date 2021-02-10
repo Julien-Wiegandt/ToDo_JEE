@@ -13,18 +13,18 @@ import java.util.Properties;
 
 public class UserFacade {
 
+    private static UserFacade instance;
     private DAOFactory daoFactory;
     private UserDAO userDAO;
-    private static UserFacade instance;
 
     private UserFacade() throws Exception {
         try {
-            Properties prop=new Properties();
-            FileInputStream ip= new FileInputStream("C:\\Users\\wiega\\Google Drive\\Development\\IdeaProjects\\ToDo_JEE\\config.properties");
+            Properties prop = new Properties();
+            FileInputStream ip = new FileInputStream("C:\\Users\\wiega\\Google Drive\\Development\\IdeaProjects\\ToDo_JEE\\config.properties");
             prop.load(ip);
-            if(prop.getProperty("databaseType").equals("MySQL")){
+            if (prop.getProperty("databaseType").equals("MySQL")) {
                 this.daoFactory = new MySQLDAOFactory();
-            }else{
+            } else {
                 this.daoFactory = new PostgreSQLDAOFactory();
             }
             this.userDAO = daoFactory.createUserDAO();
@@ -40,7 +40,9 @@ public class UserFacade {
         return instance;
     }
 
-    public User findUserbyId(String id) throws SQLException { return this.userDAO.findUserById(id); }
+    public User findUserbyId(String id) throws SQLException {
+        return this.userDAO.findUserById(id);
+    }
 
     public User findUserByEmail(String email) throws SQLException {
         return this.userDAO.findUserByEmail(email);
@@ -50,7 +52,7 @@ public class UserFacade {
         this.userDAO.createUser(new User(null, email, password));
     }
 
-    public void updateUser(String id, String email, String password) throws Exception{
+    public void updateUser(String id, String email, String password) throws Exception {
         this.userDAO.updateUser(new User(id, email, password));
     }
 }

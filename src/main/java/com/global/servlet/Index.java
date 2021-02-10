@@ -6,91 +6,64 @@ import com.global.core.bean.User;
 import com.global.core.facade.TaskFacade;
 import com.global.core.facade.TaskListFacade;
 
-import java.io.*;
-import java.util.ArrayList;
-import java.util.LinkedList;
 import javax.servlet.ServletException;
-import javax.servlet.http.*;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import java.io.IOException;
+import java.util.ArrayList;
 
 public class Index extends HttpServlet {
+    public static final String VIEW = "/WEB-INF/views/index.jsp";
+    public static final String URL_REDIRECTION = "/index";
+
     public static final String CURRENT_TASKLIST_ID = "current_tasklist_id";
-    public static final String VIEW           = "/WEB-INF/views/index.jsp";
-    public static final String TASKS          = "tasks";
-    public static final String TASKLIST       = "taskLists";
+    public static final String TASKS = "tasks";
+    public static final String TASKLIST = "taskLists";
     public static final String TASKLIST_ID_INPUT = "taskList";
 
-    private ArrayList<Task> tasks;
-    private ArrayList<TaskList> taskLists;
+    public static String current_tasklist_id = null;
 
     public void init() {
     }
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+        /* getting the user session */
         HttpSession session = request.getSession();
-        User user = (User)(session.getAttribute(Login.ATT_USER_SESSION));
-        if(user != null){
-            try {
-                taskLists = (ArrayList) TaskListFacade.getTaskListFacade().getTasksList(user.getId());
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+        User user = (User) (session.getAttribute(Login.ATT_USER_SESSION));
+
+        ArrayList<TaskList> taskLists = null;
+        ArrayList<Task> tasks = null;
+
+        if (user != null) {
+            /* Get the TaskLists from the current user in the database */
+            try { taskLists = (ArrayList) TaskListFacade.getTaskListFacade().getTasksList(user.getId()); } catch (Exception e) { e.printStackTrace(); }
+
+            /* Send them to the jsp */
             request.setAttribute(TASKLIST, taskLists);
 
-            if(taskLists.get(0) != null){
-                try {
-                    tasks = (ArrayList) TaskFacade.getTaskFacade().getTasks(user.getId());
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-                request.setAttribute(TASKS, tasks);
-                request.setAttribute(CURRENT_TASKLIST_ID, taskLists.get(0));
+            /* Get the Tasks from the current user */
+            try { tasks = (ArrayList) TaskFacade.getTaskFacade().getTasks(user.getId()); } catch (Exception e) { e.printStackTrace(); }
+
+            /* send them to the jsp */
+            request.setAttribute(TASKS, tasks);
+
+            /* set the current taskList displayed id */
+            if (current_tasklist_id == null && !taskLists.isEmpty()) {
+                current_tasklist_id = taskLists.get(0).getId();
             }
+            request.setAttribute(CURRENT_TASKLIST_ID, current_tasklist_id);
         }
         this.getServletContext().getRequestDispatcher(VIEW).forward(request, response);
     }
 
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-        String taskList_id = request.getParameter(TASKLIST_ID_INPUT);
-        HttpSession session = request.getSession();
-        User user = (User)(session.getAttribute(Login.ATT_USER_SESSION));
+        current_tasklist_id = request.getParameter(TASKLIST_ID_INPUT);
 
-        if(user != null) {
-            try {
-                taskLists = (ArrayList) TaskListFacade.getTaskListFacade().getTasksList(user.getId());
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-            request.setAttribute(TASKLIST, taskLists);
-
-            if (taskLists.get(0) != null) {
-                try {
-                    tasks = (ArrayList) TaskFacade.getTaskFacade().getTasks(user.getId());
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-                request.setAttribute(TASKS, tasks);
-                request.setAttribute(CURRENT_TASKLIST_ID, taskList_id);
-            }
-        }
-        this.getServletContext().getRequestDispatcher(VIEW).forward(request, response);
+        response.sendRedirect(URL_REDIRECTION);
     }
 
     public void destroy() {
-    }
-
-    public ArrayList<Task> getTasks() {
-        return tasks;
-    }
-
-    public void setTasks(ArrayList<Task> tasks) {
-        this.tasks = tasks;
-    }
-
-    public ArrayList<TaskList> getTaskLists() {
-        return taskLists;
-    }
-
-    public void setTaskLists(ArrayList<TaskList> taskLists) {
-        this.taskLists = taskLists;
     }
 }

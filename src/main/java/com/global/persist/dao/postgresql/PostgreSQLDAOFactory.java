@@ -7,11 +7,11 @@ import com.global.persist.dao.UserDAO;
 
 public class PostgreSQLDAOFactory extends DAOFactory {
 
-    public PostgreSQLDAOFactory(){
+    public PostgreSQLDAOFactory() {
         //Faire connection
     }
 
-    public UserDAO createUserDAO(){
+    public UserDAO createUserDAO() {
         return new UserDAOPostgreSQLImpl();
     }
 

@@ -11,14 +11,14 @@ public class MySQLConnection {
 
     public static Connection connection;
 
-    private String MYSQL_DB_HOST,MYSQL_DB_NAME,MYSQL_DB_PORT,MYSQL_DB_USERNAME,MYSQL_DB_PW;
+    private String MYSQL_DB_HOST, MYSQL_DB_NAME, MYSQL_DB_PORT, MYSQL_DB_USERNAME, MYSQL_DB_PW;
 
     public MySQLConnection() throws Exception {
         getConnection();
     }
 
     public Connection getConnection() throws Exception {
-        if(connection==null){
+        if (connection == null) {
             try {
                 Class.forName("com.mysql.jdbc.Driver");
             } catch (ClassNotFoundException e) {
@@ -56,7 +56,7 @@ public class MySQLConnection {
                 connection = DriverManager.
                         getConnection(connectionURL.toString(), MYSQL_DB_USERNAME, MYSQL_DB_PW);
             } catch (SQLException e) {
-                throw new Exception( "Connection to database failed." );
+                throw new Exception("Connection to database failed.");
             }
         }
         return connection;

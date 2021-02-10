@@ -10,7 +10,7 @@ import java.sql.SQLException;
 public class UserDAOMySQLImpl implements UserDAO {
 
     @Override
-    public User findUserById(String id) throws SQLException {
+    public User findUserById(String id) {
         User user = null;
         PreparedStatement statement = null;
         ResultSet rs = null;
@@ -18,7 +18,7 @@ public class UserDAOMySQLImpl implements UserDAO {
             statement = MySQLConnection.connection.prepareStatement("SELECT * FROM User WHERE user_pk = ?;");
             statement.setString(1, id);
             rs = statement.executeQuery();
-            while(rs.next()) {
+            while (rs.next()) {
                 String email = rs.getString("email");
                 String password = rs.getString("password");
                 user = new User(id, email, password);
@@ -40,7 +40,7 @@ public class UserDAOMySQLImpl implements UserDAO {
             statement = MySQLConnection.connection.prepareStatement("SELECT * FROM User WHERE email = ?;");
             statement.setString(1, email);
             rs = statement.executeQuery();
-            while(rs.next()) {
+            while (rs.next()) {
                 String id = rs.getString("user_pk");
                 String password = rs.getString("password");
                 user = new User(id, email, password);
@@ -49,7 +49,7 @@ public class UserDAOMySQLImpl implements UserDAO {
             rs.close();
         } catch (SQLException throwables) {
             throwables.printStackTrace();
-        }finally {
+        } finally {
             System.out.println("User finded by email.");
         }
         return user;
@@ -65,13 +65,13 @@ public class UserDAOMySQLImpl implements UserDAO {
             statement.executeUpdate();
             statement.close();
         } catch (SQLException throwables) {
-            switch (throwables.getErrorCode()){
+            switch (throwables.getErrorCode()) {
                 case 1062:
-                    throw new Exception( "E-mail address already used." );
+                    throw new Exception("E-mail address already used.");
                 default:
                     break;
             }
-        }finally {
+        } finally {
             System.out.println("User created.");
         }
     }
@@ -88,13 +88,13 @@ public class UserDAOMySQLImpl implements UserDAO {
             statement.close();
         } catch (SQLException throwables) {
             throwables.printStackTrace();
-            switch (throwables.getErrorCode()){
+            switch (throwables.getErrorCode()) {
                 case 1062:
-                    throw new Exception( "E-mail address already used." );
+                    throw new Exception("E-mail address already used.");
                 default:
-                    throw new Exception( "Update User in database issue." );
+                    throw new Exception("Update User in database issue.");
             }
-        }finally {
+        } finally {
             System.out.println("User updated.");
         }
     }

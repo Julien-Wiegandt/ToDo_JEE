@@ -5,7 +5,8 @@ public class Task {
     private String label;
     private String list_fk;
 
-    public Task(){ }
+    public Task() {
+    }
 
     public Task(String id, String label, String list_fk) {
         this.id = id;

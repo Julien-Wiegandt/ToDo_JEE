@@ -1,6 +1,5 @@
 package com.global.servlet;
 
-import com.global.core.bean.TaskList;
 import com.global.core.facade.TaskListFacade;
 
 import javax.servlet.ServletException;
@@ -10,9 +9,9 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 public class DeleteTaskList extends HttpServlet {
-    private static final String TASKLIST_INPUT = "deleteTaskList";
     public static final String URL_REDIRECTION = "/";
-    public static final String VIEW            = "/";
+    public static final String VIEW = "/";
+    private static final String TASKLIST_INPUT = "deleteTaskList";
 
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         String taskList_id = request.getParameter(TASKLIST_INPUT);

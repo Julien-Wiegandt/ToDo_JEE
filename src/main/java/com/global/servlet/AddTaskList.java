@@ -1,9 +1,10 @@
 package com.global.servlet;
 
+import com.global.core.bean.Task;
+import com.global.core.bean.TaskList;
 import com.global.core.bean.User;
 import com.global.core.facade.TaskFacade;
 import com.global.core.facade.TaskListFacade;
-import com.global.core.facade.UserFacade;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -12,13 +13,11 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 
 public class AddTaskList extends HttpServlet {
-    public static final String ATT_FORM        = "AddTaskListForm";
-    public static final String URL_REDIRECTION = "/";
-    public static final String VIEW            = "/";
+    public static final String ATT_FORM = "AddTaskListForm";
+    public static final String URL_REDIRECTION = "/index";
+    public static final String VIEW = "/WEB-INF/views/index.jsp";
 
 
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
@@ -26,11 +25,36 @@ public class AddTaskList extends HttpServlet {
 
         form.createTaskList(request);
 
-        if (form.getErrors().isEmpty()) {
-            response.sendRedirect(URL_REDIRECTION);
-        } else {
-            request.setAttribute(ATT_FORM, form);
-            this.getServletContext().getRequestDispatcher(VIEW).forward(request, response);
+        HttpSession session = request.getSession();
+        User user = (User) (session.getAttribute(Login.ATT_USER_SESSION));
+
+        ArrayList<TaskList> taskLists = null;
+        ArrayList<Task> tasks = null;
+
+        if (user != null) {
+
+            try {
+                taskLists = (ArrayList) TaskListFacade.getTaskListFacade().getTasksList(user.getId());
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            request.setAttribute(Index.TASKLIST, taskLists);
+
+            if (!taskLists.isEmpty()) {
+                try {
+                    tasks = (ArrayList) TaskFacade.getTaskFacade().getTasks(user.getId());
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                request.setAttribute(Index.TASKS, tasks);
+            }
         }
+
+        if (!form.getErrors().isEmpty()) {
+            request.setAttribute(ATT_FORM, form);
+        }
+
+        request.setAttribute(Index.CURRENT_TASKLIST_ID, Index.current_tasklist_id);
+        this.getServletContext().getRequestDispatcher(VIEW).forward(request, response);
     }
 }

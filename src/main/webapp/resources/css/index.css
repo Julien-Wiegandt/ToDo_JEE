@@ -7,6 +7,15 @@
     display: block;
 }
 */
-.display-inline{
-    display: inline-block;
+.full-width{
+    width: 100%;
+}
+
+
+.TaskList{
+    background-color: white;
+}
+
+.TaskList:hover{
+    background-color: bisque;
 }
