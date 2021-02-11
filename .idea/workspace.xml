@@ -4,25 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="70791fbf-36a9-4497-8c4e-9c4fbc28a417" name="Default Changelist" comment="line deleted for git account test">
-      <change beforePath="$PROJECT_DIR$/.idea/ToDo_JEE.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/global/core/facade/UserFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/global/core/facade/UserFacade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/global/persist/dao/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/global/persist/dao/UserDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/global/persist/dao/mysql/UserDAOMySQLImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/global/persist/dao/mysql/UserDAOMySQLImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/global/servlet/AddTaskForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/global/servlet/AddTaskForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/global/servlet/AddTaskListForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/global/servlet/AddTaskListForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/head.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/head.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/profile.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/profile.jsp" afterDir="false" />
-    </list>
+    <list default="true" id="70791fbf-36a9-4497-8c4e-9c4fbc28a417" name="Default Changelist" comment="line deleted for git account test" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
