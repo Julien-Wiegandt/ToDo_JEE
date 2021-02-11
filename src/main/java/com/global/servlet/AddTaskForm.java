@@ -5,6 +5,7 @@ import com.global.util.RegexPattern;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -26,6 +27,10 @@ public class AddTaskForm {
         /* Get form inputs */
         HttpSession session = request.getSession();
         String label = request.getParameter(LABEL_INPUT);
+        /* To convert in UTF-8 */
+        /* /!\ to change! it's not the right way to do it */
+        byte[] bytes = label.getBytes(StandardCharsets.ISO_8859_1);
+        label = new String(bytes, StandardCharsets.UTF_8);
 
         try {
             validationLabel(label);

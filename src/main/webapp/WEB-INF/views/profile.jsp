@@ -8,7 +8,7 @@
         <%@include file="menu.jsp" %>
         <section class="container">
             <section class="row justify-content-center">
-                <section class="col-12 col-sm-6 col-md-4">
+                <section class="col-xs-12 col-sm-6 col-md-4">
                     <form method="post" action="profile">
                         <div class="form-group">
                             <label for="email">Email address</label>
@@ -29,6 +29,9 @@
                                    placeholder="Repeat password">
                         </div>
                         <button type="submit" class="btn btn-primary">Save</button>
+                    </form>
+                    <form class="DeleteAccountForm" method="post" action="DeleteAccount">
+                        <button type="submit" class="btn btn-danger">Delete Account</button>
                     </form>
                 </section>
             </section>

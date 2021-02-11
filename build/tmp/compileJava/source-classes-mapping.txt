@@ -26,6 +26,8 @@ com/global/servlet/DeleteTask.java
  com.global.servlet.DeleteTask
 com/global/util/RegexPattern.java
  com.global.util.RegexPattern
+com/global/servlet/DeleteAccount.java
+ com.global.servlet.DeleteAccount
 com/global/persist/dao/TaskListDAO.java
  com.global.persist.dao.TaskListDAO
 com/global/persist/dao/UserDAO.java

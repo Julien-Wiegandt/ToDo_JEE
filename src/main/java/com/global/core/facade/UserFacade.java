@@ -59,4 +59,8 @@ public class UserFacade {
     public Boolean verifyPassword(String id, String password){
         return this.userDAO.verifyPassword(id, password);
     }
+
+    public void deleteUser(String id) {
+        this.userDAO.deleteUser(id);
+    }
 }

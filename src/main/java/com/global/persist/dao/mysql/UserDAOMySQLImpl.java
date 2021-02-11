@@ -119,4 +119,25 @@ public class UserDAOMySQLImpl implements UserDAO {
             System.out.println("User updated.");
         }
     }
+
+    @Override
+    public void deleteUser(String id) {
+        PreparedStatement statement = null;
+        try {
+            statement = MySQLConnection.connection.prepareStatement("DELETE FROM Task WHERE tasklist_fk IN (SELECT tasklist_pk FROM TaskList WHERE user_fk = ?);");
+            statement.setString(1, id);
+            statement.executeUpdate();
+            statement = MySQLConnection.connection.prepareStatement("DELETE FROM TaskList WHERE user_fk = ?;");
+            statement.setString(1, id);
+            statement.executeUpdate();
+            statement = MySQLConnection.connection.prepareStatement("DELETE FROM User WHERE user_pk = ?;");
+            statement.setString(1, id);
+            statement.executeUpdate();
+            statement.close();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        } finally {
+            System.out.println("User deleted.");
+        }
+    }
 }

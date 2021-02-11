@@ -28,4 +28,9 @@ public class UserDAOPostgreSQLImpl implements UserDAO {
     public void updateUser(User user) throws Exception {
 
     }
+
+    @Override
+    public void deleteUser(String id) {
+
+    }
 }
