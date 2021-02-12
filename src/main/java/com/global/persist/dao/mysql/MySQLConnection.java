@@ -29,7 +29,7 @@ public class MySQLConnection {
             System.out.println("MySQL JDBC Driver Registered!");
             connection = null;
 
-            try (InputStream input = getClass().getClassLoader().getResourceAsStream("config.properties");) {
+            try (InputStream input = getClass().getClassLoader().getResourceAsStream("database.properties");) {
 
                 Properties prop = new Properties();
 

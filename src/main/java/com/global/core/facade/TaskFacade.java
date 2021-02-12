@@ -18,7 +18,7 @@ public class TaskFacade {
     private String DATABASE_TYPE = "DATABASE_TYPE";
 
     private TaskFacade() throws Exception {
-        try (InputStream input = getClass().getClassLoader().getResourceAsStream("/config.properties");) {
+        try (InputStream input = getClass().getClassLoader().getResourceAsStream("/database.properties");) {
             Properties prop = new Properties();
             prop.load(input);
 
