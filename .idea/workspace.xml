@@ -12,15 +12,14 @@
       <change beforePath="$PROJECT_DIR$/.gradle/6.7.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7.1/javaCompile/classAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.7.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7.1/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/config.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/config.properties" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/source-classes-mapping.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/source-classes-mapping.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.properties" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/global/core/facade/TaskFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/global/core/facade/TaskFacade.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/global/core/facade/TaskListFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/global/core/facade/TaskListFacade.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/global/core/facade/UserFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/global/core/facade/UserFacade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/global/persist/dao/mysql/MySQLConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/global/persist/dao/mysql/MySQLConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/classes/config.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,23 +118,21 @@
       <recent name="C:\Users\wiega\Google Drive\Development\IdeaProjects\ToDo_JEE\src\main\webapp\WEB-INF\views" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\wiega\Google Drive\Development\IdeaProjects\ToDo_JEE\src\main\webapp\WEB-INF\views" />
+      <recent name="C:\Users\wiega\Google Drive\Development\IdeaProjects\ToDo_JEE\src\main\webapp\WEB-INF\classes" />
       <recent name="C:\Users\wiega\Google Drive\Development\IdeaProjects\ToDo_JEE\src\main\webapp\WEB-INF" />
+      <recent name="C:\Users\wiega\Google Drive\Development\IdeaProjects\ToDo_JEE\src\main\webapp\WEB-INF\views" />
       <recent name="C:\Users\wiega\Google Drive\Development\IdeaProjects\ToDo_JEE\src\main\webapp\ressources" />
       <recent name="C:\Users\wiega\Google Drive\Development\IdeaProjects\ToDo_JEE\src\main\webapp" />
-      <recent name="C:\Users\wiega\Google Drive\Development\IdeaProjects\ToDo_JEE\src\main\webapp\WEB-INF\views\js" />
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -260,6 +257,7 @@
       <workItem from="1612959491062" duration="3436000" />
       <workItem from="1613033755602" duration="2052000" />
       <workItem from="1613116148968" duration="745000" />
+      <workItem from="1613122562130" duration="972000" />
     </task>
     <servers />
   </component>

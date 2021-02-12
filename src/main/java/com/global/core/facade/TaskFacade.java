@@ -6,10 +6,8 @@ import com.global.persist.dao.TaskDAO;
 import com.global.persist.dao.mysql.MySQLDAOFactory;
 import com.global.persist.dao.postgresql.PostgreSQLDAOFactory;
 
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.sql.SQLException;
 import java.util.Collection;
 import java.util.Properties;
 
@@ -20,7 +18,7 @@ public class TaskFacade {
     private String DATABASE_TYPE = "DATABASE_TYPE";
 
     private TaskFacade() throws Exception {
-        try (InputStream input = getClass().getClassLoader().getResourceAsStream("config.properties");) {
+        try (InputStream input = getClass().getClassLoader().getResourceAsStream("/config.properties");) {
             Properties prop = new Properties();
             prop.load(input);
 

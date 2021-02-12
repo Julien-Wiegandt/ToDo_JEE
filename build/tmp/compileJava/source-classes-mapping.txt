@@ -1,39 +1,39 @@
-com/global/persist/dao/mysql/TaskDAOMySQLImpl.java
- com.global.persist.dao.mysql.TaskDAOMySQLImpl
+com/global/persist/dao/postgresql/UserDAOPostgreSQLImpl.java
+ com.global.persist.dao.postgresql.UserDAOPostgreSQLImpl
 com/global/core/bean/TaskList.java
  com.global.core.bean.TaskList
 com/global/core/bean/Task.java
  com.global.core.bean.Task
-com/global/servlet/Register.java
- com.global.servlet.Register
-com/global/persist/dao/postgresql/UserDAOPostgreSQLImpl.java
- com.global.persist.dao.postgresql.UserDAOPostgreSQLImpl
-com/global/persist/dao/mysql/MySQLConnection.java
- com.global.persist.dao.mysql.MySQLConnection
-com/global/servlet/Profile.java
- com.global.servlet.Profile
-com/global/core/bean/User.java
- com.global.core.bean.User
-com/global/persist/dao/mysql/TaskListDAOMySQLImpl.java
- com.global.persist.dao.mysql.TaskListDAOMySQLImpl
-com/global/persist/dao/mysql/UserDAOMySQLImpl.java
- com.global.persist.dao.mysql.UserDAOMySQLImpl
-com/global/servlet/Disconnect.java
- com.global.servlet.Disconnect
 com/global/persist/dao/DAOFactory.java
  com.global.persist.dao.DAOFactory
 com/global/persist/dao/TaskDAO.java
  com.global.persist.dao.TaskDAO
-com/global/util/RegexPattern.java
- com.global.util.RegexPattern
 com/global/persist/dao/postgresql/PostgreSQLDAOFactory.java
  com.global.persist.dao.postgresql.PostgreSQLDAOFactory
+com/global/servlet/Profile.java
+ com.global.servlet.Profile
+com/global/core/bean/User.java
+ com.global.core.bean.User
+com/global/servlet/AddTaskForm.java
+ com.global.servlet.AddTaskForm
+com/global/servlet/DeleteTaskList.java
+ com.global.servlet.DeleteTaskList
+com/global/servlet/Disconnect.java
+ com.global.servlet.Disconnect
+com/global/servlet/LoginForm.java
+ com.global.servlet.LoginForm
+com/global/servlet/Register.java
+ com.global.servlet.Register
+com/global/util/RegexPattern.java
+ com.global.util.RegexPattern
+com/global/servlet/DeleteAccount.java
+ com.global.servlet.DeleteAccount
 com/global/persist/dao/TaskListDAO.java
  com.global.persist.dao.TaskListDAO
 com/global/persist/dao/UserDAO.java
  com.global.persist.dao.UserDAO
-com/global/persist/dao/mysql/MySQLDAOFactory.java
- com.global.persist.dao.mysql.MySQLDAOFactory
+com/global/servlet/AddTask.java
+ com.global.servlet.AddTask
 com/global/servlet/Login.java
  com.global.servlet.Login
 com/global/servlet/Index.java
@@ -54,13 +54,13 @@ com/global/servlet/RegisterForm.java
  com.global.servlet.RegisterForm
 com/global/servlet/DeleteTask.java
  com.global.servlet.DeleteTask
-com/global/servlet/DeleteAccount.java
- com.global.servlet.DeleteAccount
-com/global/servlet/DeleteTaskList.java
- com.global.servlet.DeleteTaskList
-com/global/servlet/AddTask.java
- com.global.servlet.AddTask
-com/global/servlet/AddTaskForm.java
- com.global.servlet.AddTaskForm
-com/global/servlet/LoginForm.java
- com.global.servlet.LoginForm
+com/global/persist/dao/mysql/MySQLConnection.java
+ com.global.persist.dao.mysql.MySQLConnection
+com/global/persist/dao/mysql/TaskListDAOMySQLImpl.java
+ com.global.persist.dao.mysql.TaskListDAOMySQLImpl
+com/global/persist/dao/mysql/MySQLDAOFactory.java
+ com.global.persist.dao.mysql.MySQLDAOFactory
+com/global/persist/dao/mysql/UserDAOMySQLImpl.java
+ com.global.persist.dao.mysql.UserDAOMySQLImpl
+com/global/persist/dao/mysql/TaskDAOMySQLImpl.java
+ com.global.persist.dao.mysql.TaskDAOMySQLImpl

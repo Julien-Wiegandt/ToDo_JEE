@@ -6,7 +6,6 @@ import com.global.persist.dao.UserDAO;
 import com.global.persist.dao.mysql.MySQLDAOFactory;
 import com.global.persist.dao.postgresql.PostgreSQLDAOFactory;
 
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.SQLException;
@@ -20,7 +19,7 @@ public class UserFacade {
     private String DATABASE_TYPE = "DATABASE_TYPE";
 
     private UserFacade() throws Exception {
-        try (InputStream input = getClass().getClassLoader().getResourceAsStream("config.properties");) {
+        try (InputStream input = getClass().getClassLoader().getResourceAsStream("/config.properties");) {
             Properties prop = new Properties();
             prop.load(input);
 
