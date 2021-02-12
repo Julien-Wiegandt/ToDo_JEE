@@ -8,6 +8,7 @@ import com.global.persist.dao.postgresql.PostgreSQLDAOFactory;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.sql.SQLException;
 import java.util.Collection;
 import java.util.Properties;
@@ -16,13 +17,14 @@ public class TaskListFacade {
     private static TaskListFacade instance;
     private DAOFactory daoFactory;
     private TaskListDAO taskListDAO;
+    private String DATABASE_TYPE = "DATABASE_TYPE";
 
     private TaskListFacade() throws Exception {
-        try {
+        try (InputStream input = getClass().getClassLoader().getResourceAsStream("config.properties");) {
             Properties prop = new Properties();
-            FileInputStream ip = new FileInputStream("C:\\Users\\wiega\\Google Drive\\Development\\IdeaProjects\\ToDo_JEE\\config.properties");
-            prop.load(ip);
-            if (prop.getProperty("databaseType").equals("MySQL")) {
+            prop.load(input);
+
+            if (prop.getProperty(DATABASE_TYPE).equals("MySQL")) {
                 this.daoFactory = new MySQLDAOFactory();
             } else {
                 this.daoFactory = new PostgreSQLDAOFactory();
