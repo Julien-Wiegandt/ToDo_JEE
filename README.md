@@ -1,6 +1,6 @@
 # ToDo_JEE
 ### The project
-Here we have a ToDo list web app using JEE, Gradle frameworks, TomCat server and MySQL database.
+Here we have a ToDo list web app using JEE and Gradle frameworks, TomCat server and MySQL database.
 
 Deployed on heroku -> https://todo-jee.herokuapp.com/
 
