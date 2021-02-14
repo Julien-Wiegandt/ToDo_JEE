@@ -1,0 +1,1 @@
+web: java -jar build/libs/ToDo_JEE-1.0-SNAPSHOT.war
